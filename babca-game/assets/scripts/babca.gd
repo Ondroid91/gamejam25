@@ -17,7 +17,6 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	
-	print(ground_ray.is_colliding())
 
 func player_movement(delta: float) -> void:
 	velocity.y += self.get_gravity().y * delta  
