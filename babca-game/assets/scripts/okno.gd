@@ -19,12 +19,15 @@ extends Node2D
 @export var min_enabled : bool
 @export var move_ver_enebled : bool = false
 @export var move_hor_enebled : bool = false
-@export var window_speed : float = 100
+
+# move button
 var mouse_pos : Vector2
 var window_moving : bool
 var offset_x: float = 0
 var offset_y: float = 0
 
+# min button
+@export var is_minimalized : bool = false
 
 
 func _ready():
@@ -40,15 +43,23 @@ func _physics_process(delta: float) -> void:
 	if window_moving:
 		var mouse_pos = get_global_mouse_position()
 		if move_ver_enebled:
-			self.velocity.y = mouse_pos.y - offset_y
+			self.position.y = mouse_pos.y - offset_y
 		elif move_hor_enebled:
-			self.velocity.x = mouse_pos.x - offset_x
+			self.position.x = mouse_pos.x - offset_x
 
 func _on_cancel_button_pressed():
 	queue_free()
 
 func _on_min_button_pressed():
-	print("Minimize button pressed")
+	if is_minimalized:
+		is_minimalized = false
+		static_coll.scale.y = 1
+		static_coll.position.y = 0
+	elif not is_minimalized:
+		is_minimalized = true
+		static_coll.scale.y = 0.2
+		static_coll.position.y = -50
+
 
 func _on_move_button_pressed():
 	window_moving = true

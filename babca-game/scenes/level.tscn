@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://42ui80hh5nd5" path="res://scenes/platform.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/babca.tscn" id="2_w8frs"]
-[ext_resource type="PackedScene" uid="uid://banotl1lnr2mj" path="res://scenes/okno.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bf24altkpnwk4" path="res://scenes/windows/okno.tscn" id="4_mx8sn"]
 
 [node name="level" type="Node2D"]
 
@@ -13,11 +13,18 @@ scale = Vector2(17.12, 1)
 [node name="babca" parent="." instance=ExtResource("2_w8frs")]
 position = Vector2(226, 476)
 
-[node name="okno" parent="." instance=ExtResource("3_w8frs")]
-position = Vector2(725, 458)
-window_type = null
-cancel_enabled = null
-min_enabled = null
+[node name="okno" parent="." instance=ExtResource("4_mx8sn")]
+position = Vector2(690, 375)
+move_hor_enebled = false
+
+[node name="okno2" parent="." instance=ExtResource("4_mx8sn")]
+position = Vector2(1022, 239)
+move_hor_enebled = false
+
+[node name="okno3" parent="." instance=ExtResource("4_mx8sn")]
+position = Vector2(314, 302)
 move_ver_enebled = true
-move_hor_enebled = null
-move_speed = null
+move_hor_enebled = false
+
+[node name="okno4" parent="." instance=ExtResource("4_mx8sn")]
+position = Vector2(109, 151)

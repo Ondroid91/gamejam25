@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf24altkpnwk4"]
+
+[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_00nhu"]
+[ext_resource type="Texture2D" uid="uid://bjabrgg3thij8" path="res://icon.svg" id="2_0vrk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2lmlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0vrk1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lyhc"]
+size = Vector2(119, 117)
+
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "cancel_button", "min_button", "move_button")]
+script = ExtResource("1_00nhu")
+ani_sprite_window = NodePath("AnimatedSprite2D")
+ani_sprite_in_window = NodePath("AnimatedSprite2D2")
+ani_sprite_cancel_button = NodePath("AnimatedSprite2D3")
+ani_sprite_min_button = NodePath("AnimatedSprite2D4")
+static_coll = NodePath("StaticBody2D")
+cancel_button = NodePath("cancel")
+min_button = NodePath("min")
+move_button = NodePath("move")
+move_hor_enebled = true
+metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2lmlr")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+
+[node name="cancel" type="Button" parent="."]
+offset_left = 41.0
+offset_top = -58.0
+offset_right = 59.0
+offset_bottom = -27.0
+text = "X"
+
+[node name="move" type="Button" parent="."]
+offset_left = -54.0
+offset_top = -55.0
+offset_right = 13.0
+offset_bottom = -42.0
+
+[node name="min" type="Button" parent="."]
+offset_left = 18.0
+offset_top = -57.0
+offset_right = 39.0
+offset_bottom = -26.0
+text = "O"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_3lyhc")
