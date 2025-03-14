@@ -9,6 +9,8 @@ extends Node2D
 @export var animation_player : AnimationPlayer
 @export var sound_player : AudioStreamPlayer2D
 @export var static_coll : StaticBody2D
+@export var max_coll : CollisionPolygon2D
+@export var min_coll : CollisionShape2D
 @export var cancel_button : Button
 @export var min_button : Button
 @export var move_button : Button
@@ -27,7 +29,7 @@ var offset_x: float = 0
 var offset_y: float = 0
 
 # min button
-@export var is_minimalized : bool = false
+@export var is_minimalized : bool = true
 
 
 func _ready():
@@ -48,24 +50,26 @@ func _physics_process(delta: float) -> void:
 			self.position.x = mouse_pos.x - offset_x
 
 func _on_cancel_button_pressed():
+	print("ljdslkfajlkds")
 	queue_free()
 
 func _on_min_button_pressed():
 	if is_minimalized:
 		is_minimalized = false
-		static_coll.scale.y = 1
-		static_coll.position.y = 0
+		min_coll.disabled = false
+		max_coll.disabled = true
+		ani_sprite_window.frame = 0
 	elif not is_minimalized:
 		is_minimalized = true
-		static_coll.scale.y = 0.2
-		static_coll.position.y = -50
-
+		min_coll.disabled = true
+		max_coll.disabled = false
+		ani_sprite_window.frame = 1
 
 func _on_move_button_pressed():
 	window_moving = true
 	var mouse_pos = get_global_mouse_position()
 	offset_x = mouse_pos.x - self.position.x
 	offset_y = mouse_pos.y - self.position.y
-	
+
 func _on_move_button_released():
 	window_moving = false

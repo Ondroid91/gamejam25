@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://7ivsa7hnwf7"]
+
+[ext_resource type="Script" uid="uid://lqtixg78bmsm" path="res://assets/scripts/camera.gd" id="1_cvpoc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kod1s"]
+
+[node name="camera" type="CharacterBody2D"]
+script = ExtResource("1_cvpoc")
+offset = Vector2(0, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kod1s")
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 325.0
+
+[node name="Panel" type="Panel" parent="UI"]
+layout_mode = 0
+offset_top = 618.0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="start" type="Button" parent="UI/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 45.0
+offset_bottom = 31.0
+
+[node name="icon" type="Button" parent="UI/Panel"]
+offset_left = 80.0
+offset_top = 2.0
+offset_right = 109.0
+offset_bottom = 31.0
+
+[node name="icon2" type="Button" parent="UI/Panel"]
+offset_left = 120.0
+offset_top = 2.0
+offset_right = 149.0
+offset_bottom = 31.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7suyqljufqur"]
+[gd_scene load_steps=5 format=3 uid="uid://7suyqljufqur"]
 
 [ext_resource type="PackedScene" uid="uid://42ui80hh5nd5" path="res://scenes/platform.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/babca.tscn" id="2_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bf24altkpnwk4" path="res://scenes/windows/okno.tscn" id="4_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://7ivsa7hnwf7" path="res://scenes/camera.tscn" id="4_ppgk2"]
 
 [node name="level" type="Node2D"]
 
@@ -11,20 +12,11 @@ position = Vector2(648, 613)
 scale = Vector2(17.12, 1)
 
 [node name="babca" parent="." instance=ExtResource("2_w8frs")]
-position = Vector2(226, 476)
+position = Vector2(102, 514)
+
+[node name="camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_ppgk2")]
+position = Vector2(487, 335)
+target = NodePath("../babca")
 
 [node name="okno" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(690, 375)
-move_hor_enebled = false
-
-[node name="okno2" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(1022, 239)
-move_hor_enebled = false
-
-[node name="okno3" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(314, 302)
-move_ver_enebled = true
-move_hor_enebled = false
-
-[node name="okno4" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(109, 151)
+position = Vector2(635, 392)

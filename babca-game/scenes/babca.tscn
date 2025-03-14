@@ -7,6 +7,7 @@
 size = Vector2(117, 118)
 
 [node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "sprite", "ground_ray")]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_u7vy7")
 body_collision = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")
@@ -22,4 +23,4 @@ position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_u7vy7")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 80)
+target_position = Vector2(0, 70)

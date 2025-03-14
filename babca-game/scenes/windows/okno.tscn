@@ -1,13 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf24altkpnwk4"]
+[gd_scene load_steps=13 format=3 uid="uid://bf24altkpnwk4"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_00nhu"]
-[ext_resource type="Texture2D" uid="uid://bjabrgg3thij8" path="res://icon.svg" id="2_0vrk1"]
+[ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_0icm2"]
+[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_0icm2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2lmlr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4j75"]
+atlas = ExtResource("2_0icm2")
+region = Rect2(0, 200, 300, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsx5g"]
+atlas = ExtResource("2_0icm2")
+region = Rect2(0, 0, 300, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njhms"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0vrk1")
+"texture": SubResource("AtlasTexture_i4j75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsx5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al3gr"]
+atlas = ExtResource("3_0icm2")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_617aa"]
+atlas = ExtResource("3_0icm2")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwqj3"]
+atlas = ExtResource("3_0icm2")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lyr7"]
+atlas = ExtResource("3_0icm2")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4j75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al3gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_617aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwqj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lyr7")
 }],
 "loop": true,
 "name": &"default",
@@ -15,52 +63,59 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lyhc"]
-size = Vector2(119, 117)
+size = Vector2(299, 37)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "cancel_button", "min_button", "move_button")]
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
 script = ExtResource("1_00nhu")
-ani_sprite_window = NodePath("AnimatedSprite2D")
-ani_sprite_in_window = NodePath("AnimatedSprite2D2")
-ani_sprite_cancel_button = NodePath("AnimatedSprite2D3")
-ani_sprite_min_button = NodePath("AnimatedSprite2D4")
+ani_sprite_window = NodePath("window")
+ani_sprite_in_window = NodePath("AnimatedSprite2D4")
+ani_sprite_cancel_button = NodePath("cancel_button")
 static_coll = NodePath("StaticBody2D")
+max_coll = NodePath("StaticBody2D/max_coll")
+min_coll = NodePath("StaticBody2D/min_coll")
 cancel_button = NodePath("cancel")
 min_button = NodePath("min")
 move_button = NodePath("move")
-move_hor_enebled = true
 metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_2lmlr")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+[node name="window" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_njhms")
+frame = 1
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel" type="Button" parent="."]
-offset_left = 41.0
-offset_top = -58.0
-offset_right = 59.0
-offset_bottom = -27.0
-text = "X"
+offset_left = 124.0
+offset_top = -96.0
+offset_right = 145.0
+offset_bottom = -77.0
+flat = true
+
+[node name="cancel_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, -86)
+sprite_frames = SubResource("SpriteFrames_i4j75")
 
 [node name="move" type="Button" parent="."]
-offset_left = -54.0
-offset_top = -55.0
-offset_right = 13.0
-offset_bottom = -42.0
+offset_left = -147.0
+offset_top = -97.0
+offset_right = 71.0
+offset_bottom = -76.0
 
 [node name="min" type="Button" parent="."]
-offset_left = 18.0
-offset_top = -57.0
-offset_right = 39.0
-offset_bottom = -26.0
+offset_left = 83.0
+offset_top = -102.0
+offset_right = 117.0
+offset_bottom = -71.0
 text = "O"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.5, 1.5)
+[node name="min_coll" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(-0.5, -80.5)
 shape = SubResource("RectangleShape2D_3lyhc")
+disabled = true
+
+[node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-150, -100, 149, -100, 149, 99, -150, 99, -150, 80, 0, 80, 0, -61, -150, -61)
