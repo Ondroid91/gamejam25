@@ -6,8 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7vy7"]
 size = Vector2(117, 118)
 
-[node name="babca" type="CharacterBody2D"]
+[node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "sprite", "ground_ray")]
 script = ExtResource("1_u7vy7")
+body_collision = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
+ground_ray = NodePath("RayCast2D")
+jump_speed = 500
+speed = 500
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_6o8b2")
@@ -15,3 +20,6 @@ texture = ExtResource("1_6o8b2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_u7vy7")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 80)
