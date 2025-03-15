@@ -237,22 +237,24 @@ position = Vector2(-44, 76)
 sprite_frames = SubResource("SpriteFrames_155j1")
 
 [node name="yes" type="Button" parent="."]
-offset_left = 16.0
+offset_left = 14.0
 offset_top = 64.0
-offset_right = 76.0
-offset_bottom = 86.0
+offset_right = 74.0
+offset_bottom = 88.0
 focus_mode = 0
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("6_mpf4e")
+theme_override_font_sizes/font_size = 15
 text = "ACCEPT"
 flat = true
 
 [node name="no" type="Button" parent="."]
-offset_left = -72.0
+offset_left = -74.0
 offset_top = 64.0
-offset_right = -12.0
-offset_bottom = 86.0
+offset_right = -14.0
+offset_bottom = 88.0
 focus_mode = 0
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("6_mpf4e")
+theme_override_font_sizes/font_size = 15
 text = "DENIED"
 flat = true
 

@@ -149,14 +149,24 @@ func answer_friend_request(accepted : bool) -> void:
 		queue_free()
 
 var cookies_stage : int = 0
-func cookies(answer : bool, stage : int) -> bool:
+func cookies(answer : bool, stage : int) -> void:
+	print("cookies")
+	var get_cookied = false
 	match stage:
+		0:
+			if answer:
+				get_cookied = true
+			cookies_stage += 1
+			ani_sprite_in_window.frame += 1
 		1:
 			cookies_stage += 1
-			return false
-	return true
-
-
+			ani_sprite_in_window.frame += 1
+		2:
+			queue_free()
+	if get_cookied:
+		ani_sprite_window.frame = 1
+		await get_tree().create_timer(2.0).timeout
+		gl.alive = false
 
 
 # ----------- TRIGGERS ----------------------------
@@ -196,7 +206,6 @@ func _on_no_button_pressed():
 		answer_friend_request(false)
 
 func _on_cancel_button_pressed():
-	print("cancel")
 	if cancel_enabled:
 		queue_free()
 

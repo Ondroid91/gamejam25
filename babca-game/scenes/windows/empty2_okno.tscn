@@ -1,0 +1,229 @@
+[gd_scene load_steps=27 format=3 uid="uid://by61li2dufxql"]
+
+[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_go0go"]
+[ext_resource type="Texture2D" uid="uid://bptv84uojetwf" path="res://assets/images/window3.png" id="2_rjuye"]
+[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_ylcl2"]
+[ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_hp0jx"]
+[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="5_r7i3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypvbd"]
+atlas = ExtResource("2_rjuye")
+region = Rect2(350, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plbt3"]
+atlas = ExtResource("2_rjuye")
+region = Rect2(0, 0, 350, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gl1c8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypvbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plbt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al3gr"]
+atlas = ExtResource("3_ylcl2")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_617aa"]
+atlas = ExtResource("3_ylcl2")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwqj3"]
+atlas = ExtResource("3_ylcl2")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lyr7"]
+atlas = ExtResource("3_ylcl2")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qesmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al3gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_617aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwqj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lyr7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hwef"]
+atlas = ExtResource("4_hp0jx")
+region = Rect2(0, 0, 94, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huxxi"]
+atlas = ExtResource("4_hp0jx")
+region = Rect2(0, 14, 94, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xp8t8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hwef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huxxi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njhms"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j1ox"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4wc"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3bvy"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywv5h"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(72, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwjd"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(90, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovar"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(108, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k34kt"]
+atlas = ExtResource("5_r7i3o")
+region = Rect2(126, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cdl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njhms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j1ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3bvy")
+}],
+"loop": true,
+"name": &"maximaze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywv5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k34kt")
+}],
+"loop": true,
+"name": &"minimaze",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrsol"]
+size = Vector2(350, 39)
+
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
+script = ExtResource("1_go0go")
+ani_sprite_window = NodePath("window")
+ani_sprite_in_window = NodePath("in_window")
+ani_sprite_cancel_button = NodePath("cancel_button")
+ani_sprite_min_button = NodePath("min_button")
+ani_sprite_move_button = NodePath("move_button")
+static_coll = NodePath("StaticBody2D")
+max_coll = NodePath("StaticBody2D/max_coll")
+min_coll = NodePath("StaticBody2D/min_coll")
+cancel_button = NodePath("cancel")
+min_button = NodePath("min")
+move_button = NodePath("move")
+metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
+
+[node name="window" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gl1c8")
+frame = 1
+
+[node name="in_window" type="AnimatedSprite2D" parent="."]
+
+[node name="cancel_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(161, -112)
+sprite_frames = SubResource("SpriteFrames_qesmc")
+
+[node name="cancel" type="Button" parent="."]
+offset_left = 152.0
+offset_top = -120.0
+offset_right = 170.0
+offset_bottom = -104.0
+focus_mode = 0
+flat = true
+
+[node name="move_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-118, -113)
+sprite_frames = SubResource("SpriteFrames_xp8t8")
+
+[node name="move" type="Button" parent="."]
+offset_left = -172.0
+offset_top = -123.0
+offset_right = 118.0
+offset_bottom = -102.0
+focus_mode = 0
+flat = true
+
+[node name="min_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(137, -112)
+sprite_frames = SubResource("SpriteFrames_0cdl5")
+animation = &"maximaze"
+
+[node name="min" type="Button" parent="."]
+offset_left = 128.0
+offset_top = -120.0
+offset_right = 146.0
+offset_bottom = -104.0
+focus_mode = 0
+flat = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="min_coll" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, -105.5)
+shape = SubResource("RectangleShape2D_rrsol")
+disabled = true
+
+[node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-175, -125, 175, -125, 175, 125, -175, 125)
