@@ -17,6 +17,7 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	refresh()
+	
 
 func player_movement(delta: float) -> void:
 	#movement
@@ -28,6 +29,10 @@ func player_movement(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, friction * delta)
 	if Input.is_action_pressed("up") and ground_ray.is_colliding():
 		velocity.y -= jump_speed
+	if velocity.y < -jump_speed:
+		velocity.y = 1000
+	
+	
 	move_and_slide()
 	# animations
 	if ground_ray.is_colliding():

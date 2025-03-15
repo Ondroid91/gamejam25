@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://bpc74c0md14br"]
+[gd_scene load_steps=39 format=3 uid="uid://bpc74c0md14br"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_ajceg"]
 [ext_resource type="Texture2D" uid="uid://d101srbngcgi3" path="res://assets/images/loading2.png" id="2_3joc1"]
 [ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_s0e73"]
 [ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_b6u82"]
+[ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_lhjb6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhjb6"]
 atlas = ExtResource("2_3joc1")
@@ -140,6 +141,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0c2c"]
+atlas = ExtResource("4_lhjb6")
+region = Rect2(0, 0, 47, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wxbi"]
+atlas = ExtResource("4_lhjb6")
+region = Rect2(0, 14, 47, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1r8o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0c2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wxbi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_njhms"]
 atlas = ExtResource("4_b6u82")
 region = Rect2(0, 0, 18, 16)
@@ -215,12 +238,13 @@ size = Vector2(100, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3joc1"]
 size = Vector2(100, 12)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "area_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "area_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
 script = ExtResource("1_ajceg")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("in_window")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
+ani_sprite_move_button = NodePath("move_button")
 static_coll = NodePath("StaticBody2D")
 area_coll = NodePath("Area2D")
 max_coll = NodePath("StaticBody2D/max_coll")
@@ -250,6 +274,10 @@ focus_mode = 0
 flat = true
 
 [node name="move_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-22, -12)
+sprite_frames = SubResource("SpriteFrames_1r8o8")
+frame = 1
+frame_progress = 0.841903
 
 [node name="move" type="Button" parent="."]
 offset_left = -48.0

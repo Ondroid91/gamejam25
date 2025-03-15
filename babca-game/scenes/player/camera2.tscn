@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://owqy7djiw50o"]
+[gd_scene load_steps=3 format=3 uid="uid://owqy7djiw50o"]
 
 [ext_resource type="Script" uid="uid://ck3ulrq25lfq8" path="res://assets/scripts/camera2.gd" id="1_1revr"]
+[ext_resource type="PackedScene" uid="uid://b3w0keijcinqo" path="res://scenes/player/ui.tscn" id="2_kwptj"]
 
 [node name="Camera2D" type="Camera2D"]
 script = ExtResource("1_1revr")
-off_set = Vector2(0, -100)
+follow_speed = 10.0
+
+[node name="UI" parent="." instance=ExtResource("2_kwptj")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0

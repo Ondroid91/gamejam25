@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3w0keijcinqo"]
+
+[ext_resource type="Script" uid="uid://bkxp7b12dlhxu" path="res://scenes/player/ui.gd" id="1_7k51o"]
+[ext_resource type="Texture2D" uid="uid://dn136pwfqwfbi" path="res://assets/images/taskbar.png" id="2_tkbb0"]
+[ext_resource type="Texture2D" uid="uid://di6ykhum7wotc" path="res://assets/images/restart.png" id="3_vo2vx"]
+[ext_resource type="Texture2D" uid="uid://bvsf78qr0m53m" path="res://assets/images/recipe-lista.png" id="4_lvnoa"]
+[ext_resource type="Texture2D" uid="uid://c2y6h2supaxav" path="res://assets/images/foreground-concept.png" id="5_tkbb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t84n"]
+atlas = ExtResource("3_vo2vx")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g50rv"]
+atlas = ExtResource("3_vo2vx")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du6f5"]
+atlas = ExtResource("3_vo2vx")
+region = Rect2(44, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbney"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t84n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g50rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du6f5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("refresh_icon")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7k51o")
+refresh_icon = NodePath("refresh_icon")
+
+[node name="Taskbar" type="Sprite2D" parent="."]
+position = Vector2(579, 588)
+texture = ExtResource("2_tkbb0")
+
+[node name="start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 611.0
+offset_right = 50.0
+offset_bottom = 645.0
+focus_mode = 0
+
+[node name="refresh" type="Button" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 611.0
+offset_right = 114.0
+offset_bottom = 645.0
+focus_mode = 0
+
+[node name="refresh_icon" type="AnimatedSprite2D" parent="."]
+position = Vector2(306, 589)
+sprite_frames = SubResource("SpriteFrames_bbney")
+
+[node name="Recipe-lista" type="Sprite2D" parent="."]
+position = Vector2(336, 589)
+texture = ExtResource("4_lvnoa")
+
+[node name="Foreground-concept" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.642337, 0.642337)
+texture = ExtResource("5_tkbb0")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="refresh" to="." method="_on_refresh_mouse_entered"]
+[connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]

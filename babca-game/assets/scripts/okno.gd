@@ -6,6 +6,7 @@ extends Node2D
 @export var ani_sprite_in_window : AnimatedSprite2D
 @export var ani_sprite_cancel_button : AnimatedSprite2D
 @export var ani_sprite_min_button : AnimatedSprite2D
+@export var ani_sprite_move_button : AnimatedSprite2D
 @export var animation_player : AnimationPlayer
 @export var sound_player : AudioStreamPlayer2D
 @export var static_coll : StaticBody2D
@@ -58,6 +59,10 @@ var num_pos2 : int = 0
 var num_pos3 : int = 0
 var code : = "245"
 
+#windows
+var max_dis : float = 500
+var origin_pos : Vector2
+
 
 func _ready():
 	if cancel_button:
@@ -89,16 +94,17 @@ func _ready():
 
 	if is_minimalized:
 		_on_min_button_pressed()
-
 	update_buttons()
+	origin_pos = position
 
 func _physics_process(delta: float) -> void:
 	if window_moving:
 		var mouse_pos = get_global_mouse_position()
-		if move_ver_enebled:
-			self.position.y = mouse_pos.y - offset_y
-		elif move_hor_enebled:
-			self.position.x = mouse_pos.x - offset_x
+		if (mouse_pos - origin_pos).length() < max_dis:
+			if move_ver_enebled:
+				self.position.y = mouse_pos.y - offset_y
+			elif move_hor_enebled:
+				self.position.x = mouse_pos.x - offset_x
 
 
 func update_buttons() -> void:
@@ -116,6 +122,13 @@ func update_buttons() -> void:
 			button_animtion(ani_sprite_min_button, anim, 0)
 		else:
 			button_animtion(ani_sprite_min_button, anim, 3)
+	if ani_sprite_move_button:
+		if not move_ver_enebled and not move_hor_enebled:
+			ani_sprite_move_button.visible = false
+		elif move_ver_enebled:
+			ani_sprite_move_button.frame = 1
+		elif move_hor_enebled:
+			ani_sprite_move_button.frame = 0
 
 
 func button_animtion(button : AnimatedSprite2D,anim : String, fram : int) -> void:
