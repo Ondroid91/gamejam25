@@ -160,10 +160,11 @@ func _on_yes_button_pressed():
 	else:
 		answer_friend_request(true)
 
-func  _on_no_button_pressed():
+func _on_no_button_pressed():
 	answer_friend_request(false)
 
 func _on_cancel_button_pressed():
+	print("cancel")
 	if cancel_enabled:
 		queue_free()
 

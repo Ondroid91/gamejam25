@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bt7yksqs26cvq"]
+
+[ext_resource type="Script" uid="uid://c4l67p73bb21o" path="res://assets/scripts/checkpoint.gd" id="1_fq2q7"]
+[ext_resource type="Texture2D" uid="uid://bjgnjv1kuts22" path="res://assets/images/save.png" id="2_vtu05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qjeh"]
+size = Vector2(34, 9.55056)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhlrb"]
+atlas = ExtResource("2_vtu05")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qmlc"]
+atlas = ExtResource("2_vtu05")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkvya"]
+atlas = ExtResource("2_vtu05")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5iwx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhlrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qmlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkvya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="checkpoint" type="Area2D" node_paths=PackedStringArray("save_icon")]
+script = ExtResource("1_fq2q7")
+save_icon = NodePath("save_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(1.58663, 5.64842)
+shape = SubResource("RectangleShape2D_5qjeh")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="save_icon" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j5iwx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

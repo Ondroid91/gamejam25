@@ -1,41 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://7suyqljufqur"]
+[gd_scene load_steps=9 format=3 uid="uid://7suyqljufqur"]
 
+[ext_resource type="Script" uid="uid://dj4qui0l4lqr7" path="res://assets/scripts/level.gd" id="1_klq6b"]
 [ext_resource type="PackedScene" uid="uid://42ui80hh5nd5" path="res://scenes/platform.tscn" id="1_w7c3h"]
-[ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/babca.tscn" id="2_w8frs"]
-[ext_resource type="PackedScene" uid="uid://bf24altkpnwk4" path="res://scenes/windows/okno.tscn" id="4_mx8sn"]
-[ext_resource type="PackedScene" uid="uid://7ivsa7hnwf7" path="res://scenes/camera.tscn" id="4_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/player/babca.tscn" id="2_8c41q"]
+[ext_resource type="PackedScene" uid="uid://7ivsa7hnwf7" path="res://scenes/player/camera.tscn" id="3_olg7q"]
 [ext_resource type="PackedScene" uid="uid://bpc74c0md14br" path="res://scenes/windows/loading_window.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://boh1qj2yk8yns" path="res://scenes/windows/friend_request.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://c4d0mjhsyb8a8" path="res://scenes/windows/locked_window.tscn" id="7_klq6b"]
+[ext_resource type="PackedScene" uid="uid://bt7yksqs26cvq" path="res://scenes/triggers/checkpoint.tscn" id="8_b121j"]
 
 [node name="level" type="Node2D"]
+script = ExtResource("1_klq6b")
+player = ExtResource("2_8c41q")
+camera = ExtResource("3_olg7q")
 
 [node name="platform" parent="." instance=ExtResource("1_w7c3h")]
 position = Vector2(648, 613)
 scale = Vector2(17.12, 1)
 
-[node name="babca" parent="." instance=ExtResource("2_w8frs")]
-position = Vector2(102, 514)
+[node name="checkpoint" parent="." instance=ExtResource("8_b121j")]
+position = Vector2(314, 503)
 
-[node name="camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_ppgk2")]
-position = Vector2(487, 335)
+[node name="checkpoint2" parent="." instance=ExtResource("8_b121j")]
+position = Vector2(701, 509)
+
+[node name="camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_olg7q")]
+position = Vector2(98, 490)
 target = NodePath("../babca")
 
-[node name="okno" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(918, 171)
-cancel_enabled = false
-move_ver_enebled = true
+[node name="babca" parent="." instance=ExtResource("2_8c41q")]
+position = Vector2(14, 503)
+
+[node name="okno" parent="." instance=ExtResource("6_2r41h")]
+position = Vector2(-295, 410)
 
 [node name="okno2" parent="." instance=ExtResource("5_ppgk2")]
-position = Vector2(164, 170)
-move_ver_enebled = true
-move_hor_enebled = true
+position = Vector2(119, 475)
 
 [node name="okno3" parent="." instance=ExtResource("5_ppgk2")]
-position = Vector2(345, 132)
+position = Vector2(342, 437)
 
-[node name="okno4" parent="." instance=ExtResource("6_2r41h")]
-position = Vector2(588, 207)
-
-[node name="okno5" parent="." instance=ExtResource("7_klq6b")]
-position = Vector2(-139, 195)
+[node name="okno4" parent="." instance=ExtResource("7_klq6b")]
+position = Vector2(796, 374)

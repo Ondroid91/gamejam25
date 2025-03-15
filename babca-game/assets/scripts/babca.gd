@@ -16,7 +16,7 @@ extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
-	
+	refresh()
 
 func player_movement(delta: float) -> void:
 	velocity.y += self.get_gravity().y * delta  
@@ -29,3 +29,7 @@ func player_movement(delta: float) -> void:
 		print("jump")
 		velocity.y -= jump_speed
 	move_and_slide()
+
+func refresh() -> void:
+	if Input.is_action_just_pressed("refresh"):
+		get_tree().reload_current_scene()
