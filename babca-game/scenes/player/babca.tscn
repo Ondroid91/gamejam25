@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ve5syp8hov6" path="res://assets/images/Untitled_Artwork.png" id="2_fidv6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fidv6"]
-height = 93.0
+height = 100.594
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fidv6"]
 atlas = ExtResource("2_fidv6")
@@ -72,7 +72,7 @@ animations = [{
 }]
 
 [node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "player_sprite", "ground_ray")]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.623818, 0.623818)
 script = ExtResource("1_fidv6")
 body_collision = NodePath("CollisionShape2D")
 player_sprite = NodePath("player_animation")

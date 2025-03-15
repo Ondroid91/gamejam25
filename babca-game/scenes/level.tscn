@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://7suyqljufqur"]
+[gd_scene load_steps=7 format=3 uid="uid://7suyqljufqur"]
 
 [ext_resource type="Script" uid="uid://dj4qui0l4lqr7" path="res://assets/scripts/level.gd" id="1_klq6b"]
-[ext_resource type="PackedScene" uid="uid://42ui80hh5nd5" path="res://scenes/platform.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/player/babca.tscn" id="2_8c41q"]
 [ext_resource type="PackedScene" uid="uid://bf24altkpnwk4" path="res://scenes/windows/okno.tscn" id="4_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://boh1qj2yk8yns" path="res://scenes/windows/friend_request.tscn" id="6_2r41h"]
-[ext_resource type="PackedScene" uid="uid://bt7yksqs26cvq" path="res://scenes/triggers/checkpoint.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://bx141wuhma7p3" path="res://scenes/tile_map.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://owqy7djiw50o" path="res://scenes/player/camera2.tscn" id="9_8c41q"]
 
 [node name="level" type="Node2D"]
@@ -13,18 +12,11 @@ script = ExtResource("1_klq6b")
 player = ExtResource("2_8c41q")
 camera = ExtResource("9_8c41q")
 
-[node name="platform" parent="." instance=ExtResource("1_w7c3h")]
-position = Vector2(648, 613)
-scale = Vector2(17.12, 1)
-
-[node name="checkpoint" parent="." instance=ExtResource("8_b121j")]
-position = Vector2(314, 503)
-
-[node name="checkpoint2" parent="." instance=ExtResource("8_b121j")]
-position = Vector2(701, 509)
+[node name="TileMap" parent="." instance=ExtResource("7_klq6b")]
+layer_0/tile_data = PackedInt32Array(196600, 1, 0, 196601, 1, 0, 196602, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0)
 
 [node name="okno" parent="." instance=ExtResource("6_2r41h")]
-position = Vector2(928, 336)
+position = Vector2(734, -113)
 
 [node name="okno2" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(428, 346)
+position = Vector2(381, -124)
