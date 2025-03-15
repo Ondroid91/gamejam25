@@ -20,7 +20,7 @@ extends CharacterBody2D
 @export var move_ver_enabled: bool = false
 @export var move_hor_enabled: bool = false
 
-@export var window_speed: float = 10.0  # Ovládání rychlosti pohybu
+@export var window_speed: float = 10.0
 var window_moving: bool = false
 var offset_x: float = 0
 var offset_y: float = 0
@@ -44,7 +44,6 @@ func _physics_process(delta: float) -> void:
 		if move_ver_enabled:
 			target_position.y = mouse_pos.y - offset_y
 
-	# Interpolace pohybu k cílové pozici s omezením kolizí
 	velocity = (target_position - global_position) * window_speed * delta
 	move_and_slide()
 
@@ -59,7 +58,7 @@ func _on_move_button_pressed():
 	var mouse_pos = get_global_mouse_position()
 	offset_x = mouse_pos.x - global_position.x
 	offset_y = mouse_pos.y - global_position.y
-	target_position = global_position  # Inicializace cílové pozice
+	target_position = global_position
 
 func _on_move_button_released():
 	window_moving = false

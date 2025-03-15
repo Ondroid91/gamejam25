@@ -1,19 +1,19 @@
-[gd_scene load_steps=23 format=3 uid="uid://bf24altkpnwk4"]
+[gd_scene load_steps=23 format=3 uid="uid://boh1qj2yk8yns"]
 
-[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_00nhu"]
-[ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_0icm2"]
-[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_0icm2"]
-[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_al3gr"]
+[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_8cex0"]
+[ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_f3sp5"]
+[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_mpf4e"]
+[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_74jsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4j75"]
-atlas = ExtResource("2_0icm2")
+atlas = ExtResource("2_f3sp5")
 region = Rect2(0, 200, 300, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsx5g"]
-atlas = ExtResource("2_0icm2")
+atlas = ExtResource("2_f3sp5")
 region = Rect2(0, 0, 300, 200)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_njhms"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfvgn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -28,22 +28,22 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_al3gr"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_mpf4e")
 region = Rect2(0, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_617aa"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_mpf4e")
 region = Rect2(18, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwqj3"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_mpf4e")
 region = Rect2(36, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lyr7"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_mpf4e")
 region = Rect2(54, 0, 18, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i4j75"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0q8ud"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -64,38 +64,38 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njhms"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(0, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j1ox"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(18, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu4wc"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(36, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3bvy"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(54, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywv5h"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(72, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exwjd"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(90, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oovar"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(108, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k34kt"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_74jsl")
 region = Rect2(126, 0, 18, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7hwef"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7g2d4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -132,32 +132,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lyhc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_155j1"]
 size = Vector2(299, 37)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
-script = ExtResource("1_00nhu")
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "cancel_button", "min_button", "move_button", "yes_button", "no_button")]
+script = ExtResource("1_8cex0")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("in_window")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
-static_coll = NodePath("StaticBody2D")
-max_coll = NodePath("StaticBody2D/max_coll")
-min_coll = NodePath("StaticBody2D/min_coll")
 cancel_button = NodePath("cancel")
 min_button = NodePath("min")
 move_button = NodePath("move")
+yes_button = NodePath("yes")
+no_button = NodePath("no")
+cancel_enabled = false
+min_enabled = false
+is_minimalized = false
 metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_njhms")
+sprite_frames = SubResource("SpriteFrames_vfvgn")
 frame = 1
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(136, -88)
-sprite_frames = SubResource("SpriteFrames_i4j75")
+sprite_frames = SubResource("SpriteFrames_0q8ud")
 
 [node name="cancel" type="Button" parent="."]
 offset_left = 127.0
@@ -176,7 +178,7 @@ offset_bottom = -76.0
 
 [node name="min_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(112, -88)
-sprite_frames = SubResource("SpriteFrames_7hwef")
+sprite_frames = SubResource("SpriteFrames_7g2d4")
 animation = &"maximaze"
 
 [node name="min" type="Button" parent="."]
@@ -191,9 +193,23 @@ flat = true
 [node name="min_coll" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2(-0.5, -80.5)
-shape = SubResource("RectangleShape2D_3lyhc")
+shape = SubResource("RectangleShape2D_155j1")
 disabled = true
 
 [node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
-polygon = PackedVector2Array(-150, -100, 149, -100, 149, 99, -150, 99, -150, 80, 0, 80, 0, -61, -150, -61)
+polygon = PackedVector2Array(-150, -100, 149, -100, 149, 99, -150, 99)
+
+[node name="yes" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 28.0
+offset_right = 97.0
+offset_bottom = 59.0
+text = "ACCEPT"
+
+[node name="no" type="Button" parent="."]
+offset_left = -116.0
+offset_top = 28.0
+offset_right = -39.0
+offset_bottom = 59.0
+text = "DENIED"

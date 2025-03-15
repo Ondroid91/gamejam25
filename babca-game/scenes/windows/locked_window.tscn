@@ -1,19 +1,19 @@
-[gd_scene load_steps=23 format=3 uid="uid://bf24altkpnwk4"]
+[gd_scene load_steps=23 format=3 uid="uid://c4d0mjhsyb8a8"]
 
-[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_00nhu"]
-[ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_0icm2"]
-[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_0icm2"]
-[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_al3gr"]
+[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_nlsf4"]
+[ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_64ivc"]
+[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_54sjo"]
+[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_y7yx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4j75"]
-atlas = ExtResource("2_0icm2")
+atlas = ExtResource("2_64ivc")
 region = Rect2(0, 200, 300, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsx5g"]
-atlas = ExtResource("2_0icm2")
+atlas = ExtResource("2_64ivc")
 region = Rect2(0, 0, 300, 200)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_njhms"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ly2od"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -28,22 +28,22 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_al3gr"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_54sjo")
 region = Rect2(0, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_617aa"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_54sjo")
 region = Rect2(18, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwqj3"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_54sjo")
 region = Rect2(36, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lyr7"]
-atlas = ExtResource("3_0icm2")
+atlas = ExtResource("3_54sjo")
 region = Rect2(54, 0, 18, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i4j75"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3m4u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -64,38 +64,38 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njhms"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(0, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j1ox"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(18, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu4wc"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(36, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3bvy"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(54, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywv5h"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(72, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exwjd"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(90, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oovar"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(108, 0, 18, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k34kt"]
-atlas = ExtResource("4_al3gr")
+atlas = ExtResource("4_y7yx7")
 region = Rect2(126, 0, 18, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7hwef"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kq7vk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -132,32 +132,44 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lyhc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vo3u"]
 size = Vector2(299, 37)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
-script = ExtResource("1_00nhu")
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "cancel_button", "min_button", "move_button", "yes_button", "one_up", "one_down", "two_up", "two_down", "three_up", "three_down", "first_num", "second_num", "third_num", "code_print")]
+script = ExtResource("1_nlsf4")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("in_window")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
-static_coll = NodePath("StaticBody2D")
-max_coll = NodePath("StaticBody2D/max_coll")
-min_coll = NodePath("StaticBody2D/min_coll")
 cancel_button = NodePath("cancel")
 min_button = NodePath("min")
 move_button = NodePath("move")
+yes_button = NodePath("yes")
+one_up = NodePath("1_up")
+one_down = NodePath("1_down")
+two_up = NodePath("2_up")
+two_down = NodePath("2_down")
+three_up = NodePath("3_up")
+three_down = NodePath("3_down")
+first_num = NodePath("Label")
+second_num = NodePath("Label2")
+third_num = NodePath("Label3")
+code_print = NodePath("code_print")
+window_type = "code window"
+cancel_enabled = false
+min_enabled = false
+is_minimalized = false
 metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_njhms")
+sprite_frames = SubResource("SpriteFrames_ly2od")
 frame = 1
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(136, -88)
-sprite_frames = SubResource("SpriteFrames_i4j75")
+sprite_frames = SubResource("SpriteFrames_w3m4u")
 
 [node name="cancel" type="Button" parent="."]
 offset_left = 127.0
@@ -176,7 +188,7 @@ offset_bottom = -76.0
 
 [node name="min_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(112, -88)
-sprite_frames = SubResource("SpriteFrames_7hwef")
+sprite_frames = SubResource("SpriteFrames_kq7vk")
 animation = &"maximaze"
 
 [node name="min" type="Button" parent="."]
@@ -191,9 +203,77 @@ flat = true
 [node name="min_coll" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2(-0.5, -80.5)
-shape = SubResource("RectangleShape2D_3lyhc")
+shape = SubResource("RectangleShape2D_5vo3u")
 disabled = true
 
 [node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(-150, -100, 149, -100, 149, 99, -150, 99, -150, 80, 0, 80, 0, -61, -150, -61)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -68.0
+offset_top = -32.0
+offset_right = -28.0
+offset_bottom = -9.0
+text = "0"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -4.0
+offset_top = -32.0
+offset_right = 36.0
+offset_bottom = -9.0
+text = "0"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 60.0
+offset_top = -32.0
+offset_right = 100.0
+offset_bottom = -9.0
+text = "0"
+
+[node name="code_print" type="Label" parent="."]
+offset_left = -148.0
+offset_top = 28.0
+offset_right = 148.0
+offset_bottom = 51.0
+horizontal_alignment = 1
+
+[node name="1_up" type="Button" parent="."]
+offset_left = -72.0
+offset_top = -60.0
+offset_right = -55.0
+offset_bottom = -44.0
+
+[node name="2_up" type="Button" parent="."]
+offset_left = -8.0
+offset_top = -60.0
+offset_right = 9.0
+offset_bottom = -44.0
+
+[node name="3_up" type="Button" parent="."]
+offset_left = 56.0
+offset_top = -60.0
+offset_right = 73.0
+offset_bottom = -44.0
+
+[node name="yes" type="Button" parent="."]
+offset_left = -40.0
+offset_top = 56.0
+offset_right = 37.0
+offset_bottom = 87.0
+text = "OK"
+
+[node name="1_down" type="Button" parent="."]
+offset_left = -72.0
+offset_right = -55.0
+offset_bottom = 16.0
+
+[node name="2_down" type="Button" parent="."]
+offset_left = -8.0
+offset_right = 9.0
+offset_bottom = 16.0
+
+[node name="3_down" type="Button" parent="."]
+offset_left = 56.0
+offset_right = 73.0
+offset_bottom = 16.0
