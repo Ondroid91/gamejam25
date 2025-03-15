@@ -1,26 +1,93 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb7ootuiqs82c"]
+[gd_scene load_steps=11 format=3 uid="uid://bb7ootuiqs82c"]
 
 [ext_resource type="Script" uid="uid://blibgtxfaqqsy" path="res://assets/scripts/babca.gd" id="1_fidv6"]
-[ext_resource type="Texture2D" uid="uid://bjabrgg3thij8" path="res://icon.svg" id="2_vilms"]
+[ext_resource type="Texture2D" uid="uid://c1ve5syp8hov6" path="res://assets/images/Untitled_Artwork.png" id="2_fidv6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7vy7"]
-size = Vector2(117, 118)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fidv6"]
+height = 93.0
 
-[node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "sprite", "ground_ray")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fidv6"]
+atlas = ExtResource("2_fidv6")
+region = Rect2(137, 120, 137, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy7ql"]
+atlas = ExtResource("2_fidv6")
+region = Rect2(0, 0, 91, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vilms"]
+atlas = ExtResource("2_fidv6")
+region = Rect2(0, 120, 137, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrn0b"]
+atlas = ExtResource("2_fidv6")
+region = Rect2(0, 0, 91, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boctf"]
+atlas = ExtResource("2_fidv6")
+region = Rect2(91, 0, 91, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3xrv"]
+atlas = ExtResource("2_fidv6")
+region = Rect2(182, 0, 91, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21mo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fidv6")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy7ql")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vilms")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrn0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boctf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3xrv")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "player_sprite", "ground_ray")]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_fidv6")
 body_collision = NodePath("CollisionShape2D")
-sprite = NodePath("Sprite2D")
+player_sprite = NodePath("player_animation")
 ground_ray = NodePath("RayCast2D")
 jump_speed = 500
 speed = 500
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vilms")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)
-shape = SubResource("RectangleShape2D_u7vy7")
+shape = SubResource("CapsuleShape2D_fidv6")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 70)
+target_position = Vector2(0, 57.5)
+
+[node name="player_animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_21mo8")
+animation = &"walk"
+frame = 1
