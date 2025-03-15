@@ -6,6 +6,7 @@ signal triggered
 @export var spawn : bool
 @export var was_pressed = false
 
+
 func _ready():
 	add_to_group("triggers")
 	
@@ -13,4 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "babca" and kill:
 		gl.alive = false
 	if body.name == "babca" and spawn:
+		emit_signal("triggered")
+	elif body.name == "new_friend" and kill:
 		emit_signal("triggered")
