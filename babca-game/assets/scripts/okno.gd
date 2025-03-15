@@ -56,9 +56,9 @@ var numbers3 : Array = [1, 9, 4, 8, 3, 2, 7, 0, 6, 5]
 var label1 : int = numbers1[0]
 var label2 : int = numbers1[0]
 var label3 : int = numbers1[0]
-var num_pos1 : int = 0
-var num_pos2 : int = 0
-var num_pos3 : int = 0
+var num_pos1 : int = numbers1[1]
+var num_pos2 : int = numbers1[6]
+var num_pos3 : int = numbers1[7]
 var code : = "245"
 
 #windows

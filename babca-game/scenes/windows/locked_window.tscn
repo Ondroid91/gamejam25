@@ -1,27 +1,23 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4d0mjhsyb8a8"]
+[gd_scene load_steps=50 format=3 uid="uid://c4d0mjhsyb8a8"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_nlsf4"]
-[ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_64ivc"]
+[ext_resource type="Texture2D" uid="uid://bca8e6np5bfmw" path="res://assets/images/Ransomware.png" id="2_54sjo"]
 [ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_54sjo"]
+[ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_ly2od"]
 [ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_y7yx7"]
 [ext_resource type="FontFile" uid="uid://rwp5pnfk880b" path="res://assets/fonts/MedodicaRegular.otf" id="5_64ivc"]
+[ext_resource type="Texture2D" uid="uid://de3p5g75d1n7k" path="res://assets/images/arrows.png" id="7_ly2od"]
+[ext_resource type="Texture2D" uid="uid://cdu5nidmrncj5" path="res://assets/images/accept-decline-buttons.png" id="8_w3m4u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4j75"]
-atlas = ExtResource("2_64ivc")
-region = Rect2(0, 200, 300, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qsx5g"]
-atlas = ExtResource("2_64ivc")
-region = Rect2(0, 0, 300, 200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3m4u"]
+atlas = ExtResource("2_54sjo")
+region = Rect2(0, 0, 300, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ly2od"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i4j75")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qsx5g")
+"texture": SubResource("AtlasTexture_w3m4u")
 }],
 "loop": true,
 "name": &"default",
@@ -58,6 +54,28 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1lyr7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hwef"]
+atlas = ExtResource("4_ly2od")
+region = Rect2(0, 0, 94, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huxxi"]
+atlas = ExtResource("4_ly2od")
+region = Rect2(0, 14, 94, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vo3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hwef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huxxi")
 }],
 "loop": true,
 "name": &"default",
@@ -134,14 +152,187 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vo3u"]
-size = Vector2(299, 37)
+size = Vector2(300, 300)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "cancel_button", "min_button", "move_button", "yes_button", "one_up", "one_down", "two_up", "two_down", "three_up", "three_down", "first_num", "second_num", "third_num", "code_print")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq7vk"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(0, 0, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vo3u"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(23, 0, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc2v1"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(46, 0, 23, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82tuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq7vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vo3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc2v1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seh4y"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(0, 0, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5r3m"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(23, 0, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3kni"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(46, 0, 23, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtpmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seh4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5r3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3kni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx0te"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(0, 0, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx2od"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(23, 0, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0snrp"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(46, 0, 23, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybtwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx0te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx2od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0snrp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l7ko"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(0, 12, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ho6"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(23, 12, 23, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlx42"]
+atlas = ExtResource("7_ly2od")
+region = Rect2(46, 12, 23, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g75dr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l7ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ho6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlx42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei2ss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l7ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ho6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlx42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfrqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l7ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ho6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlx42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddldv"]
+atlas = ExtResource("8_w3m4u")
+region = Rect2(0, 0, 60, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnhi1"]
+atlas = ExtResource("8_w3m4u")
+region = Rect2(60, 0, 60, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ut35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddldv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnhi1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "cancel_button", "min_button", "move_button", "yes_button", "one_up", "one_down", "two_up", "two_down", "three_up", "three_down", "first_num", "second_num", "third_num", "code_print")]
 script = ExtResource("1_nlsf4")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("in_window")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
+ani_sprite_move_button = NodePath("move_button")
 cancel_button = NodePath("cancel")
 min_button = NodePath("min")
 move_button = NodePath("move")
@@ -164,42 +355,43 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ly2od")
-frame = 1
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel_button" type="AnimatedSprite2D" parent="."]
-position = Vector2(136, -88)
+position = Vector2(136, -137)
 sprite_frames = SubResource("SpriteFrames_w3m4u")
 
 [node name="cancel" type="Button" parent="."]
 offset_left = 127.0
-offset_top = -96.0
+offset_top = -145.0
 offset_right = 145.0
-offset_bottom = -80.0
+offset_bottom = -129.0
 focus_mode = 0
 flat = true
 
 [node name="move_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-70, -137)
+sprite_frames = SubResource("SpriteFrames_5vo3u")
 
 [node name="move" type="Button" parent="."]
 offset_left = -147.0
-offset_top = -97.0
-offset_right = 92.0
-offset_bottom = -76.0
+offset_top = -147.0
+offset_right = 94.0
+offset_bottom = -126.0
 focus_mode = 0
 flat = true
 
 [node name="min_button" type="AnimatedSprite2D" parent="."]
-position = Vector2(112, -88)
+position = Vector2(112, -137)
 sprite_frames = SubResource("SpriteFrames_kq7vk")
 animation = &"maximaze"
 
 [node name="min" type="Button" parent="."]
 offset_left = 103.0
-offset_top = -96.0
+offset_top = -145.0
 offset_right = 121.0
-offset_bottom = -80.0
+offset_bottom = -129.0
 focus_mode = 0
 flat = true
 
@@ -207,95 +399,139 @@ flat = true
 
 [node name="min_coll" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
-position = Vector2(-0.5, -80.5)
 shape = SubResource("RectangleShape2D_5vo3u")
 disabled = true
 
 [node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
-polygon = PackedVector2Array(-150, -100, 149, -100, 149, 99, -150, 99, -150, 80, 0, 80, 0, -61, -150, -61)
+position = Vector2(0, -50)
+polygon = PackedVector2Array(-150, -100, 150, -100, 150, 200, -150, 200)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -68.0
-offset_top = -32.0
-offset_right = -28.0
-offset_bottom = -9.0
+offset_left = -64.0
+offset_top = 21.0
+offset_right = -24.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_64ivc")
 theme_override_font_sizes/font_size = 25
 text = "0"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -4.0
-offset_top = -32.0
-offset_right = 36.0
-offset_bottom = -9.0
+offset_left = -5.0
+offset_top = 21.0
+offset_right = 35.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_64ivc")
 theme_override_font_sizes/font_size = 25
 text = "0"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 60.0
-offset_top = -32.0
-offset_right = 100.0
-offset_bottom = -9.0
+offset_left = 52.0
+offset_top = 21.0
+offset_right = 92.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_64ivc")
 theme_override_font_sizes/font_size = 25
 text = "0"
 
 [node name="code_print" type="Label" parent="."]
 offset_left = -148.0
-offset_top = 28.0
+offset_top = 80.0
 offset_right = 148.0
-offset_bottom = 51.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_64ivc")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
+[node name="1up_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-60.5, -2)
+sprite_frames = SubResource("SpriteFrames_82tuc")
+
 [node name="1_up" type="Button" parent="."]
-offset_left = -72.0
-offset_top = -60.0
-offset_right = -55.0
-offset_bottom = -44.0
+offset_left = -68.0
+offset_top = -12.0
+offset_right = -51.0
+offset_bottom = 4.0
 focus_mode = 0
+flat = true
+
+[node name="2up_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -2)
+sprite_frames = SubResource("SpriteFrames_rtpmv")
 
 [node name="2_up" type="Button" parent="."]
 offset_left = -8.0
-offset_top = -60.0
+offset_top = -12.0
 offset_right = 9.0
-offset_bottom = -44.0
+offset_bottom = 4.0
 focus_mode = 0
+flat = true
+
+[node name="3up_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(59.5, -2)
+sprite_frames = SubResource("SpriteFrames_ybtwy")
 
 [node name="3_up" type="Button" parent="."]
-offset_left = 56.0
-offset_top = -60.0
-offset_right = 73.0
-offset_bottom = -44.0
+offset_left = 52.0
+offset_top = -12.0
+offset_right = 69.0
+offset_bottom = 4.0
 focus_mode = 0
+flat = true
+
+[node name="1down_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-60.5, 69)
+sprite_frames = SubResource("SpriteFrames_g75dr")
+
+[node name="1_down" type="Button" parent="."]
+offset_left = -68.5
+offset_top = 60.0
+offset_right = -51.5
+offset_bottom = 76.0
+focus_mode = 0
+flat = true
+
+[node name="2up_button2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, 69)
+sprite_frames = SubResource("SpriteFrames_ei2ss")
+
+[node name="2_down" type="Button" parent="."]
+offset_left = -9.5
+offset_top = 60.0
+offset_right = 7.5
+offset_bottom = 76.0
+focus_mode = 0
+flat = true
+
+[node name="3up_button2" type="AnimatedSprite2D" parent="."]
+position = Vector2(59.5, 69)
+sprite_frames = SubResource("SpriteFrames_tfrqu")
+
+[node name="3_down" type="Button" parent="."]
+offset_left = 51.5
+offset_top = 60.0
+offset_right = 68.5
+offset_bottom = 76.0
+focus_mode = 0
+flat = true
+
+[node name="ok_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 124.668)
+scale = Vector2(1.66677, 1.66677)
+sprite_frames = SubResource("SpriteFrames_2ut35")
 
 [node name="yes" type="Button" parent="."]
-offset_left = -40.0
-offset_top = 56.0
-offset_right = 37.0
-offset_bottom = 87.0
+offset_left = -52.0
+offset_top = 108.668
+offset_right = 49.0
+offset_bottom = 142.668
 focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_64ivc")
 theme_override_font_sizes/font_size = 25
 text = "OK"
-
-[node name="1_down" type="Button" parent="."]
-offset_left = -72.0
-offset_right = -55.0
-offset_bottom = 16.0
-focus_mode = 0
-
-[node name="2_down" type="Button" parent="."]
-offset_left = -8.0
-offset_right = 9.0
-offset_bottom = 16.0
-focus_mode = 0
-
-[node name="3_down" type="Button" parent="."]
-offset_left = 56.0
-offset_right = 73.0
-offset_bottom = 16.0
-focus_mode = 0
+flat = true
