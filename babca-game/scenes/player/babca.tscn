@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ve5syp8hov6" path="res://assets/images/Untitled_Artwork.png" id="2_fidv6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fidv6"]
+radius = 22.9424
 height = 100.594
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fidv6"]
@@ -77,8 +78,10 @@ script = ExtResource("1_fidv6")
 body_collision = NodePath("CollisionShape2D")
 player_sprite = NodePath("player_animation")
 ground_ray = NodePath("RayCast2D")
-jump_speed = 500
-speed = 500
+jump_speed = 650
+speed = 350
+acceleration = 5.0
+friction = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1)

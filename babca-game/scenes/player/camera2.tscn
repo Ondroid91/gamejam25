@@ -4,3 +4,4 @@
 
 [node name="Camera2D" type="Camera2D"]
 script = ExtResource("1_1revr")
+off_set = Vector2(0, -100)

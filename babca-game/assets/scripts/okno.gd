@@ -83,10 +83,12 @@ func _ready():
 		three_up.pressed.connect(_on_three_up_pressed)
 	if three_down:
 		three_down.pressed.connect(_on_three_down_pressed)
-
 	
 	if area_coll:
 		area_coll.body_entered.connect(_on_body_entered)
+
+	if is_minimalized:
+		_on_min_button_pressed()
 
 	update_buttons()
 
@@ -120,7 +122,6 @@ func button_animtion(button : AnimatedSprite2D,anim : String, fram : int) -> voi
 	button.animation = anim
 	button.frame = fram
 
-
 func loading_start() -> void:
 	ani_sprite_window.play()
 	await get_tree().create_timer(2.0).timeout
@@ -131,7 +132,6 @@ func answer_friend_request(accepted : bool) -> void:
 		queue_free()
 	else:
 		queue_free()
-
 
 # ----------- TRIGGERS ----------------------------
 

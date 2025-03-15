@@ -246,6 +246,7 @@ offset_left = 28.0
 offset_top = -20.0
 offset_right = 46.0
 offset_bottom = -4.0
+focus_mode = 0
 flat = true
 
 [node name="move_button" type="AnimatedSprite2D" parent="."]
@@ -254,6 +255,8 @@ flat = true
 offset_left = -48.0
 offset_top = -24.0
 offset_right = 4.0
+focus_mode = 0
+flat = true
 
 [node name="min_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(17, -12)
@@ -265,6 +268,7 @@ offset_left = 8.0
 offset_top = -20.0
 offset_right = 26.0
 offset_bottom = -4.0
+focus_mode = 0
 flat = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

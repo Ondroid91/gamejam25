@@ -176,6 +176,7 @@ offset_left = 127.0
 offset_top = -96.0
 offset_right = 145.0
 offset_bottom = -80.0
+focus_mode = 0
 flat = true
 
 [node name="move_button" type="AnimatedSprite2D" parent="."]
@@ -183,8 +184,10 @@ flat = true
 [node name="move" type="Button" parent="."]
 offset_left = -147.0
 offset_top = -97.0
-offset_right = 71.0
+offset_right = 92.0
 offset_bottom = -76.0
+focus_mode = 0
+flat = true
 
 [node name="min_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(112, -88)
@@ -196,6 +199,7 @@ offset_left = 103.0
 offset_top = -96.0
 offset_right = 121.0
 offset_bottom = -80.0
+focus_mode = 0
 flat = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -243,37 +247,44 @@ offset_left = -72.0
 offset_top = -60.0
 offset_right = -55.0
 offset_bottom = -44.0
+focus_mode = 0
 
 [node name="2_up" type="Button" parent="."]
 offset_left = -8.0
 offset_top = -60.0
 offset_right = 9.0
 offset_bottom = -44.0
+focus_mode = 0
 
 [node name="3_up" type="Button" parent="."]
 offset_left = 56.0
 offset_top = -60.0
 offset_right = 73.0
 offset_bottom = -44.0
+focus_mode = 0
 
 [node name="yes" type="Button" parent="."]
 offset_left = -40.0
 offset_top = 56.0
 offset_right = 37.0
 offset_bottom = 87.0
+focus_mode = 0
 text = "OK"
 
 [node name="1_down" type="Button" parent="."]
 offset_left = -72.0
 offset_right = -55.0
 offset_bottom = 16.0
+focus_mode = 0
 
 [node name="2_down" type="Button" parent="."]
 offset_left = -8.0
 offset_right = 9.0
 offset_bottom = 16.0
+focus_mode = 0
 
 [node name="3_down" type="Button" parent="."]
 offset_left = 56.0
 offset_right = 73.0
 offset_bottom = 16.0
+focus_mode = 0
