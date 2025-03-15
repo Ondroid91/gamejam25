@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7suyqljufqur"]
+[gd_scene load_steps=11 format=3 uid="uid://7suyqljufqur"]
 
 [ext_resource type="Script" uid="uid://dj4qui0l4lqr7" path="res://assets/scripts/level.gd" id="1_klq6b"]
 [ext_resource type="PackedScene" uid="uid://42ui80hh5nd5" path="res://scenes/platform.tscn" id="1_w7c3h"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://boh1qj2yk8yns" path="res://scenes/windows/friend_request.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://c4d0mjhsyb8a8" path="res://scenes/windows/locked_window.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://bt7yksqs26cvq" path="res://scenes/triggers/checkpoint.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://d02sy2qpmdp8" path="res://scenes/triggers/trigger_area.tscn" id="8_olg7q"]
+[ext_resource type="PackedScene" uid="uid://c8thys3sjifyk" path="res://scenes/triggers/spawn_object.tscn" id="9_t1rx8"]
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_klq6b")
@@ -24,21 +26,22 @@ position = Vector2(314, 503)
 [node name="checkpoint2" parent="." instance=ExtResource("8_b121j")]
 position = Vector2(701, 509)
 
-[node name="camera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_olg7q")]
-position = Vector2(98, 490)
-target = NodePath("../babca")
-
-[node name="babca" parent="." instance=ExtResource("2_8c41q")]
-position = Vector2(14, 503)
-
 [node name="okno" parent="." instance=ExtResource("6_2r41h")]
-position = Vector2(-295, 410)
+position = Vector2(-380, 196)
 
 [node name="okno2" parent="." instance=ExtResource("5_ppgk2")]
-position = Vector2(119, 475)
+position = Vector2(47, 101)
 
 [node name="okno3" parent="." instance=ExtResource("5_ppgk2")]
-position = Vector2(342, 437)
+position = Vector2(448, 138)
 
-[node name="okno4" parent="." instance=ExtResource("7_klq6b")]
-position = Vector2(796, 374)
+[node name="trigger_area" parent="." instance=ExtResource("8_olg7q")]
+position = Vector2(106, 456)
+scale = Vector2(1, 8.2)
+spawn = true
+
+[node name="spawn_object" parent="." node_paths=PackedStringArray("level", "trigger") instance=ExtResource("9_t1rx8")]
+position = Vector2(419, 316)
+level = NodePath("..")
+object_to_spawn = ExtResource("7_klq6b")
+trigger = NodePath("../trigger_area")

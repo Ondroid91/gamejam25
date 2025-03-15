@@ -15,7 +15,7 @@ texture_region_size = Vector2i(20, 30)
 5:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jx7lj"]
-tile_size = Vector2i(20, 30)
+tile_size = Vector2i(30, 30)
 sources/0 = SubResource("TileSetAtlasSource_47enk")
 
 [node name="TileMap" type="TileMap"]
