@@ -72,11 +72,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "player_sprite", "ground_ray")]
+[node name="babca" type="CharacterBody2D" node_paths=PackedStringArray("body_collision", "player_sprite", "player_sounds", "ground_ray")]
 scale = Vector2(0.623818, 0.623818)
 script = ExtResource("1_fidv6")
 body_collision = NodePath("CollisionShape2D")
 player_sprite = NodePath("player_animation")
+player_sounds = NodePath("AudioStreamPlayer2D")
 ground_ray = NodePath("RayCast2D")
 jump_speed = 650
 speed = 350
@@ -94,3 +95,5 @@ target_position = Vector2(0, 57.5)
 sprite_frames = SubResource("SpriteFrames_21mo8")
 animation = &"walk"
 frame = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

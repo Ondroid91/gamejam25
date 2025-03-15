@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 gl="*res://assets/scripts/gl.gd"
 sv="*res://assets/scripts/save_manager.gd"
+ms="*res://scenes/music_manager.tscn"
 
 [display]
 

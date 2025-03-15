@@ -48,7 +48,6 @@ var offset_x: float = 0
 var offset_y: float = 0
 
 
-
 # code panel
 var numbers1 : Array = [3, 0, 8, 2, 7, 6, 9, 5, 1, 4]
 var numbers2 : Array = [5, 9, 7, 3, 1, 4, 0, 8, 6, 2]
@@ -64,7 +63,6 @@ var code : = "245"
 #windows
 var max_dis : float = 500
 var origin_pos : Vector2
-
 
 func _ready():
 	if cancel_button:

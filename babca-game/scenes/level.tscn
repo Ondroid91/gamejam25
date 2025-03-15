@@ -25,7 +25,7 @@ layer_0/tile_data = PackedInt32Array(-65544, 1, 0, -131080, 1, 0, -196616, 1, 0,
 [node name="window" type="Node2D" parent="."]
 
 [node name="okno3" parent="window" instance=ExtResource("10_olg7q")]
-position = Vector2(112, -346)
+position = Vector2(131, -303)
 
 [node name="okno2" parent="window" instance=ExtResource("4_mx8sn")]
 position = Vector2(575, -320)
@@ -106,7 +106,7 @@ trigger = NodePath("../../triggers/trigger_area")
 friend = true
 
 [node name="babca" parent="." instance=ExtResource("2_8c41q")]
-position = Vector2(609, -159)
+position = Vector2(538, -139)
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_8c41q")]
 z_index = 1

@@ -6,6 +6,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	ms.start_music("game")
 	if player and camera:
 		#spawn_player()
 		pass

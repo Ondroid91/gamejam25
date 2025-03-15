@@ -4,6 +4,7 @@ extends CharacterBody2D
 # PLAYER COMPONENTS----------------------------------------------- #
 @export var body_collision : CollisionShape2D
 @export var player_sprite : AnimatedSprite2D
+@export var player_sounds : AudioStreamPlayer2D
 @export var ground_ray : RayCast2D
 # ---------------------------------------------------------------- #
 
