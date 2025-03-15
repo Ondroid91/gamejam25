@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bf24altkpnwk4"]
+[gd_scene load_steps=23 format=3 uid="uid://bf24altkpnwk4"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_00nhu"]
 [ext_resource type="Texture2D" uid="uid://3n635lp5pt0b" path="res://assets/images/Window1.png" id="2_0icm2"]
 [ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_0icm2"]
+[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="4_al3gr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4j75"]
 atlas = ExtResource("2_0icm2")
@@ -62,14 +63,84 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_njhms"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j1ox"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4wc"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3bvy"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywv5h"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(72, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwjd"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(90, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovar"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(108, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k34kt"]
+atlas = ExtResource("4_al3gr")
+region = Rect2(126, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hwef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njhms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j1ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3bvy")
+}],
+"loop": true,
+"name": &"maximaze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywv5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k34kt")
+}],
+"loop": true,
+"name": &"minimaze",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lyhc"]
 size = Vector2(299, 37)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
 script = ExtResource("1_00nhu")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("AnimatedSprite2D4")
 ani_sprite_cancel_button = NodePath("cancel_button")
+ani_sprite_min_button = NodePath("min_button")
 static_coll = NodePath("StaticBody2D")
 max_coll = NodePath("StaticBody2D/max_coll")
 min_coll = NodePath("StaticBody2D/min_coll")
@@ -84,16 +155,18 @@ frame = 1
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 
+[node name="cancel_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(136, -88)
+sprite_frames = SubResource("SpriteFrames_i4j75")
+
 [node name="cancel" type="Button" parent="."]
-offset_left = 124.0
+offset_left = 127.0
 offset_top = -96.0
 offset_right = 145.0
-offset_bottom = -77.0
+offset_bottom = -80.0
 flat = true
 
-[node name="cancel_button" type="AnimatedSprite2D" parent="."]
-position = Vector2(135, -86)
-sprite_frames = SubResource("SpriteFrames_i4j75")
+[node name="move_button" type="AnimatedSprite2D" parent="."]
 
 [node name="move" type="Button" parent="."]
 offset_left = -147.0
@@ -101,12 +174,17 @@ offset_top = -97.0
 offset_right = 71.0
 offset_bottom = -76.0
 
+[node name="min_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(112, -88)
+sprite_frames = SubResource("SpriteFrames_7hwef")
+animation = &"maximaze"
+
 [node name="min" type="Button" parent="."]
-offset_left = 83.0
-offset_top = -102.0
-offset_right = 117.0
-offset_bottom = -71.0
-text = "O"
+offset_left = 103.0
+offset_top = -96.0
+offset_right = 121.0
+offset_bottom = -80.0
+flat = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
