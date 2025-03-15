@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 	refresh()
 	
 
+
 func player_movement(delta: float) -> void:
 	#movement
 	velocity.y += self.get_gravity().y * delta  

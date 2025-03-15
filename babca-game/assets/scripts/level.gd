@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		gl.alive = true
 
 func death() -> void:
-	pass
+	print("you died")
 
 func spawn_player() -> void:
 	var babca = player.instantiate()

@@ -37,6 +37,9 @@ extends Node2D
 @export var min_enabled : bool = true
 @export var move_ver_enebled : bool = false
 @export var move_hor_enebled : bool = false
+@export var virus : bool = false
+@export var is_minimalized : bool = true
+
 
 # move button
 var mouse_pos : Vector2
@@ -44,8 +47,7 @@ var window_moving : bool
 var offset_x: float = 0
 var offset_y: float = 0
 
-# min button
-@export var is_minimalized : bool = true
+
 
 # code panel
 var numbers1 : Array = [3, 0, 8, 2, 7, 6, 9, 5, 1, 4]
@@ -146,6 +148,17 @@ func answer_friend_request(accepted : bool) -> void:
 	else:
 		queue_free()
 
+var cookies_stage : int = 0
+func cookies(answer : bool, stage : int) -> bool:
+	match stage:
+		1:
+			cookies_stage += 1
+			return false
+	return true
+
+
+
+
 # ----------- TRIGGERS ----------------------------
 
 func _on_body_entered(body):
@@ -170,11 +183,17 @@ func _on_yes_button_pressed():
 			code_print.text = "Incorrect code!"
 			await get_tree().create_timer(0.5).timeout
 			yes_button.disabled = false
+	elif window_type == "cookies":
+		cookies(true, cookies_stage)
 	else:
 		answer_friend_request(true)
 
+
 func _on_no_button_pressed():
-	answer_friend_request(false)
+	if window_type == "cookies":
+		cookies(true, cookies_stage)
+	else:
+		answer_friend_request(false)
 
 func _on_cancel_button_pressed():
 	print("cancel")
@@ -193,6 +212,11 @@ func _on_min_button_pressed():
 			min_coll.disabled = true
 			max_coll.disabled = false
 			ani_sprite_window.frame = 1
+			if virus:
+				min_enabled = false
+				update_buttons()
+				await get_tree().create_timer(2.0).timeout
+				gl.alive = false
 		update_buttons()
 
 func _on_move_button_pressed():

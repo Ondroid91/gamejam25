@@ -1,0 +1,292 @@
+[gd_scene load_steps=32 format=3 uid="uid://bvvtdbwl8g1fq"]
+
+[ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_ndj0f"]
+[ext_resource type="Texture2D" uid="uid://dxwbavsok0jj8" path="res://assets/images/cookie-window.png" id="2_30d2l"]
+[ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_etu1m"]
+[ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_5bldh"]
+[ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="5_h1xx4"]
+[ext_resource type="Texture2D" uid="uid://cdu5nidmrncj5" path="res://assets/images/accept-decline-buttons.png" id="6_30d2l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d6j4"]
+atlas = ExtResource("2_30d2l")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmf0c"]
+atlas = ExtResource("2_30d2l")
+region = Rect2(180, 0, 180, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnip7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d6j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmf0c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al3gr"]
+atlas = ExtResource("3_etu1m")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_617aa"]
+atlas = ExtResource("3_etu1m")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwqj3"]
+atlas = ExtResource("3_etu1m")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lyr7"]
+atlas = ExtResource("3_etu1m")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0mvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al3gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_617aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwqj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lyr7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hwef"]
+atlas = ExtResource("4_5bldh")
+region = Rect2(0, 0, 94, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huxxi"]
+atlas = ExtResource("4_5bldh")
+region = Rect2(0, 14, 94, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t324t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hwef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huxxi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njhms"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(0, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j1ox"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(18, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4wc"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(36, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3bvy"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(54, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywv5h"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(72, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwjd"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(90, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovar"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(108, 0, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k34kt"]
+atlas = ExtResource("5_h1xx4")
+region = Rect2(126, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7aol5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njhms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j1ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3bvy")
+}],
+"loop": true,
+"name": &"maximaze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywv5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k34kt")
+}],
+"loop": true,
+"name": &"minimaze",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63yfd"]
+size = Vector2(180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpf4e"]
+atlas = ExtResource("6_30d2l")
+region = Rect2(60, 0, 60, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etu1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpf4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfvgn"]
+atlas = ExtResource("6_30d2l")
+region = Rect2(60, 20, 60, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bldh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfvgn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button", "yes_button", "no_button")]
+script = ExtResource("1_ndj0f")
+ani_sprite_window = NodePath("window")
+ani_sprite_in_window = NodePath("in_window")
+ani_sprite_cancel_button = NodePath("cancel_button")
+ani_sprite_min_button = NodePath("min_button")
+ani_sprite_move_button = NodePath("move_button")
+static_coll = NodePath("StaticBody2D")
+max_coll = NodePath("StaticBody2D/max_coll")
+min_coll = NodePath("StaticBody2D/min_coll")
+cancel_button = NodePath("cancel")
+min_button = NodePath("min")
+move_button = NodePath("move")
+yes_button = NodePath("yes")
+no_button = NodePath("no")
+cancel_enabled = false
+min_enabled = false
+is_minimalized = false
+metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
+
+[node name="window" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nnip7")
+
+[node name="in_window" type="AnimatedSprite2D" parent="."]
+
+[node name="cancel_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(75, -112)
+sprite_frames = SubResource("SpriteFrames_j0mvc")
+
+[node name="cancel" type="Button" parent="."]
+offset_left = 66.0
+offset_top = -120.0
+offset_right = 84.0
+offset_bottom = -104.0
+focus_mode = 0
+flat = true
+
+[node name="move_button" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-18, -112)
+sprite_frames = SubResource("SpriteFrames_t324t")
+
+[node name="move" type="Button" parent="."]
+offset_left = -87.0
+offset_top = -122.0
+offset_right = 28.0
+offset_bottom = -101.0
+focus_mode = 0
+flat = true
+
+[node name="min_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(51, -112)
+sprite_frames = SubResource("SpriteFrames_7aol5")
+animation = &"maximaze"
+
+[node name="min" type="Button" parent="."]
+offset_left = 42.0
+offset_top = -120.0
+offset_right = 60.0
+offset_bottom = -104.0
+focus_mode = 0
+flat = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="min_coll" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("RectangleShape2D_63yfd")
+disabled = true
+
+[node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-90, -125, 90, -125, 90, 125, -90, 124)
+
+[node name="accept" type="AnimatedSprite2D" parent="."]
+position = Vector2(44, 84)
+sprite_frames = SubResource("SpriteFrames_etu1m")
+
+[node name="denied" type="AnimatedSprite2D" parent="."]
+position = Vector2(-44, 84)
+sprite_frames = SubResource("SpriteFrames_5bldh")
+
+[node name="yes" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 76.0
+offset_bottom = 94.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 10
+text = "ACCEPT"
+flat = true
+
+[node name="no" type="Button" parent="."]
+offset_left = -72.0
+offset_top = 72.0
+offset_right = -12.0
+offset_bottom = 94.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 10
+text = "DENIED"
+flat = true
