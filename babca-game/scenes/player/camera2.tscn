@@ -4,11 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://b3w0keijcinqo" path="res://scenes/player/ui.tscn" id="2_kwptj"]
 
 [node name="Camera2D" type="Camera2D"]
+zoom = Vector2(0.75, 0.75)
 script = ExtResource("1_1revr")
 follow_speed = 10.0
 
 [node name="UI" parent="." instance=ExtResource("2_kwptj")]
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
+visible = false
+offset_left = -785.0
+offset_top = -403.0
+offset_right = -785.0
+offset_bottom = -403.0
+scale = Vector2(1.33739, 1.33739)

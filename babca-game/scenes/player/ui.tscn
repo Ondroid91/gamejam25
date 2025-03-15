@@ -75,7 +75,7 @@ position = Vector2(374, 536)
 texture = ExtResource("4_lvnoa")
 
 [node name="Foreground-concept" type="Sprite2D" parent="."]
-position = Vector2(576, 299)
+position = Vector2(581, 291)
 scale = Vector2(0.485569, 0.485569)
 texture = ExtResource("5_tkbb0")
 

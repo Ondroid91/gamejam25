@@ -144,6 +144,7 @@ func loading_start() -> void:
 
 func answer_friend_request(accepted : bool) -> void:
 	if accepted:
+		gl.spawn_friend = true
 		queue_free()
 	else:
 		queue_free()
@@ -197,7 +198,6 @@ func _on_yes_button_pressed():
 		cookies(true, cookies_stage)
 	else:
 		answer_friend_request(true)
-
 
 func _on_no_button_pressed():
 	if window_type == "cookies":
