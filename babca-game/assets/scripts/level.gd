@@ -5,10 +5,11 @@ extends Node2D
 @export var camera : PackedScene
 
 
-
 func _ready() -> void:
 	if player and camera:
 		spawn_player()
+
+
 
 func _process(delta: float) -> void:
 	if not gl.alive:

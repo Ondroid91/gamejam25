@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://plwoenmo7arf"]
+
+[ext_resource type="Script" uid="uid://c6a67onv5k6rk" path="res://scenes/button.gd" id="1_mi6dp"]
+
+[node name="Button" type="Button"]
+offset_right = 45.0
+offset_bottom = 8.0
+scale = Vector2(4.75084, 4.75084)
+text = "safdsa"
+script = ExtResource("1_mi6dp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

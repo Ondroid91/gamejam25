@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://dj4qui0l4lqr7" path="res://assets/scripts/level.gd" id="1_klq6b"]
 [ext_resource type="PackedScene" uid="uid://42ui80hh5nd5" path="res://scenes/platform.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/player/babca.tscn" id="2_8c41q"]
-[ext_resource type="PackedScene" uid="uid://7ivsa7hnwf7" path="res://scenes/player/camera.tscn" id="3_olg7q"]
 [ext_resource type="PackedScene" uid="uid://bf24altkpnwk4" path="res://scenes/windows/okno.tscn" id="4_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://boh1qj2yk8yns" path="res://scenes/windows/friend_request.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://bt7yksqs26cvq" path="res://scenes/triggers/checkpoint.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://owqy7djiw50o" path="res://scenes/player/camera2.tscn" id="9_8c41q"]
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_klq6b")
 player = ExtResource("2_8c41q")
-camera = ExtResource("3_olg7q")
+camera = ExtResource("9_8c41q")
 
 [node name="platform" parent="." instance=ExtResource("1_w7c3h")]
 position = Vector2(648, 613)
@@ -27,4 +27,4 @@ position = Vector2(701, 509)
 position = Vector2(928, 336)
 
 [node name="okno2" parent="." instance=ExtResource("4_mx8sn")]
-position = Vector2(408, 251)
+position = Vector2(428, 346)

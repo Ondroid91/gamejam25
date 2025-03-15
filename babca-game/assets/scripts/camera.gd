@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var target: CharacterBody2D
 @export var follow_speed: float = 5.0
 @export var offset: Vector2 = Vector2.ZERO
