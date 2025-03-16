@@ -1,10 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://by61li2dufxql"]
+[gd_scene load_steps=36 format=3 uid="uid://by61li2dufxql"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_go0go"]
 [ext_resource type="Texture2D" uid="uid://bptv84uojetwf" path="res://assets/images/window3.png" id="2_rjuye"]
+[ext_resource type="Texture2D" uid="uid://cd0aflcbiy2c" path="res://assets/images/window13.png" id="3_rjuye"]
 [ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_ylcl2"]
 [ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_hp0jx"]
+[ext_resource type="Texture2D" uid="uid://bytotb3ho4t7k" path="res://assets/images/window18.png" id="4_r7i3o"]
 [ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="5_r7i3o"]
+[ext_resource type="Texture2D" uid="uid://cbnp18tme68c1" path="res://assets/images/window-cislo-9.png" id="5_ypvbd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypvbd"]
 atlas = ExtResource("2_rjuye")
@@ -12,6 +15,30 @@ region = Rect2(350, 0, 350, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_plbt3"]
 atlas = ExtResource("2_rjuye")
+region = Rect2(0, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylcl2"]
+atlas = ExtResource("3_rjuye")
+region = Rect2(350, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp0jx"]
+atlas = ExtResource("3_rjuye")
+region = Rect2(0, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl1c8"]
+atlas = ExtResource("4_r7i3o")
+region = Rect2(350, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qesmc"]
+atlas = ExtResource("4_r7i3o")
+region = Rect2(0, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp8t8"]
+atlas = ExtResource("5_ypvbd")
+region = Rect2(350, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cdl5"]
+atlas = ExtResource("5_ypvbd")
 region = Rect2(0, 0, 350, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gl1c8"]
@@ -25,6 +52,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylcl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp0jx")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl1c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qesmc")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp8t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cdl5")
+}],
+"loop": true,
+"name": &"new_animation_2",
 "speed": 5.0
 }]
 
@@ -175,7 +235,7 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gl1c8")
-frame = 1
+animation = &"new_animation_2"
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 

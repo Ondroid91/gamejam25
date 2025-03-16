@@ -33,6 +33,7 @@ extends Node2D
 @export var code_print : Label
 # ------------ WINDOW TYPE -----------------------
 @export var window_type : String
+@export var window_image : int = 0
 @export var cancel_enabled : bool = true
 @export var min_enabled : bool = true
 @export var move_ver_enebled : bool = false
@@ -96,6 +97,9 @@ func _ready():
 		_on_min_button_pressed()
 	update_buttons()
 	origin_pos = position
+
+	# window image
+	
 
 func _physics_process(delta: float) -> void:
 	if window_moving:

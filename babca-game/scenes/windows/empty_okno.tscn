@@ -1,9 +1,12 @@
-[gd_scene load_steps=27 format=3 uid="uid://b0biq1ttuy88a"]
+[gd_scene load_steps=36 format=3 uid="uid://b0biq1ttuy88a"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_x0bfe"]
 [ext_resource type="Texture2D" uid="uid://p6qeg3admemp" path="res://assets/images/window2.png" id="2_8rr1e"]
+[ext_resource type="Texture2D" uid="uid://6krwe0qt6qsw" path="res://assets/images/window10.png" id="3_3dels"]
 [ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_8q7d3"]
 [ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_3dels"]
+[ext_resource type="Texture2D" uid="uid://d3ltfewih4srh" path="res://assets/images/window14.png" id="4_tv5ck"]
+[ext_resource type="Texture2D" uid="uid://cs30ffdt7ftdt" path="res://assets/images/window-cislo-5.png" id="5_em86g"]
 [ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="5_tv5ck"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_em86g"]
@@ -12,6 +15,30 @@ region = Rect2(180, 0, 180, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80wcj"]
 atlas = ExtResource("2_8rr1e")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y46il"]
+atlas = ExtResource("3_3dels")
+region = Rect2(180, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4qrf"]
+atlas = ExtResource("3_3dels")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cniro"]
+atlas = ExtResource("4_tv5ck")
+region = Rect2(180, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsnw1"]
+atlas = ExtResource("4_tv5ck")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ybfv"]
+atlas = ExtResource("5_em86g")
+region = Rect2(180, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynx8"]
+atlas = ExtResource("5_em86g")
 region = Rect2(0, 0, 180, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y46il"]
@@ -25,6 +52,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y46il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4qrf")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cniro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsnw1")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ybfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wynx8")
+}],
+"loop": true,
+"name": &"new_animation_2",
 "speed": 5.0
 }]
 
@@ -175,7 +235,6 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y46il")
-frame = 1
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 
@@ -190,6 +249,7 @@ offset_right = 84.0
 offset_bottom = -105.0
 focus_mode = 0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="move_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(-35, -113)
@@ -202,6 +262,7 @@ offset_right = 36.0
 offset_bottom = -102.0
 focus_mode = 0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="min_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(51, -113)
@@ -215,6 +276,7 @@ offset_right = 60.0
 offset_bottom = -105.0
 focus_mode = 0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
