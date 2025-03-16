@@ -23,7 +23,6 @@ ms="*res://scenes/global/music_manager.tscn"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

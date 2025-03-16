@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 		death()
 		gl.alive = true
 	if sv.have_recept:
+		print("sdkjdfls")
 		recept.visible = true
 
 
@@ -36,3 +37,9 @@ func _on_refresh_pressed() -> void:
 	death_screen.visible = false
 	gl.alive = true
 	get_tree().reload_current_scene()
+
+func _on_sound_pressed() -> void:
+	if AudioServer.is_bus_mute(0):
+		AudioServer.set_bus_mute(0, false)
+	else:
+		AudioServer.set_bus_mute(0, true)

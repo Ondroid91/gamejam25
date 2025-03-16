@@ -231,11 +231,11 @@ min_coll = NodePath("StaticBody2D/min_coll")
 cancel_button = NodePath("cancel")
 min_button = NodePath("min")
 move_button = NodePath("move")
+max_dis = 750.0
 metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gl1c8")
-animation = &"new_animation_2"
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 

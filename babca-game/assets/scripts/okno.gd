@@ -61,7 +61,7 @@ var num_pos3 : int = numbers1[7]
 var code : = "298"
 
 #windows
-var max_dis : float = 500
+@export var max_dis : float = 500
 var origin_pos : Vector2
 
 func _ready():
@@ -92,8 +92,8 @@ func _ready():
 	if area_coll:
 		area_coll.body_entered.connect(_on_body_entered)
 
-	if is_minimalized:
-		_on_min_button_pressed()
+
+	_on_min_button_pressed()
 	update_buttons()
 	origin_pos = position
 	
@@ -131,13 +131,13 @@ func update_buttons() -> void:
 	if not cancel_enabled:
 		button_animtion(ani_sprite_cancel_button, "default", 3)
 	if is_minimalized:
-		var anim = "maximaze"
+		var anim = "minimaze"
 		if min_enabled:
 			button_animtion(ani_sprite_min_button, anim, 0)
 		else:
 			button_animtion(ani_sprite_min_button, anim, 3)
 	else:
-		var anim = "minimaze"
+		var anim = "maximaze"
 		if min_enabled:
 			button_animtion(ani_sprite_min_button, anim, 0)
 		else:

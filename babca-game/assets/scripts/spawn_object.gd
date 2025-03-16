@@ -6,6 +6,7 @@ extends Marker2D
 @export var trigger : Area2D
 @export var one_time : bool = true
 @export var friend : bool = false
+
 func _ready() -> void:
 	if trigger:
 		trigger.triggered.connect(_on_trigger_activated)

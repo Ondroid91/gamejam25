@@ -158,12 +158,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs0ws"]
 size = Vector2(180, 37)
 
-[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
+[node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
 script = ExtResource("1_xdtq5")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("in_window")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
+ani_sprite_move_button = NodePath("move_button")
 static_coll = NodePath("StaticBody2D")
 max_coll = NodePath("StaticBody2D/max_coll")
 min_coll = NodePath("StaticBody2D/min_coll")

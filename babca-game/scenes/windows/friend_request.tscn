@@ -161,6 +161,7 @@ animations = [{
 }]
 
 [node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "cancel_button", "min_button", "move_button", "yes_button", "no_button")]
+scale = Vector2(1.7596, 1.7596)
 script = ExtResource("1_8cex0")
 ani_sprite_window = NodePath("window")
 ani_sprite_in_window = NodePath("in_window")

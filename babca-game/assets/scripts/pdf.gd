@@ -5,6 +5,9 @@ extends Area2D
 
 func _ready() -> void:
 	image.play()
+	
+	if sv.have_recept:
+		queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:
