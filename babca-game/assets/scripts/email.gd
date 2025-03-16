@@ -2,7 +2,7 @@ extends Area2D
 
 
 @export var anim : AnimatedSprite2D
-var scene_to_load = ""
+var scene_to_load = "uid://cwxqcyhjh0toh"
 
 
 func _on_body_entered(body: Node2D) -> void:

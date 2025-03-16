@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var ani : AnimatedSprite2D
+@export var quit_ani : AnimatedSprite2D
 var scene_to_load = "uid://cea4qftgpxyvm"
 
 func _ready() -> void:
@@ -17,7 +18,10 @@ func click() -> void:
 func touch() -> void:
 	ani.frame = 2
 
-
+func quit() -> void:
+	quit_ani.frame = 2
+	await get_tree().create_timer(0.5)
+	get_tree().quit()
 
 func _on_button_pressed() -> void:
 	click()
@@ -36,3 +40,6 @@ func _on_button_2_mouse_entered() -> void:
 
 func _on_button_2_mouse_exited() -> void:
 	exist()
+
+func _on_button_3_pressed() -> void:
+	quit()

@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3w0keijcinqo"]
+[gd_scene load_steps=14 format=3 uid="uid://b3w0keijcinqo"]
 
 [ext_resource type="Script" uid="uid://bkxp7b12dlhxu" path="res://assets/scripts/ui.gd" id="1_7k51o"]
+[ext_resource type="Texture2D" uid="uid://d00li7gdsmsut" path="res://assets/images/KURZORY00000.png" id="2_g50rv"]
 [ext_resource type="Texture2D" uid="uid://dn136pwfqwfbi" path="res://assets/images/taskbar.png" id="2_tkbb0"]
+[ext_resource type="Texture2D" uid="uid://c3lg55wuapaij" path="res://assets/images/KURZORY00001.png" id="3_du6f5"]
 [ext_resource type="Texture2D" uid="uid://di6ykhum7wotc" path="res://assets/images/restart.png" id="3_vo2vx"]
+[ext_resource type="Texture2D" uid="uid://dl8nislkeoqmw" path="res://assets/images/KURZORY00002.png" id="4_bbney"]
 [ext_resource type="Texture2D" uid="uid://bvsf78qr0m53m" path="res://assets/images/recipe-lista.png" id="4_lvnoa"]
 [ext_resource type="Texture2D" uid="uid://ddesn14qnj48o" path="res://assets/images/monitor.png" id="5_tkbb0"]
 [ext_resource type="Texture2D" uid="uid://blrxggkmddkjt" path="res://assets/images/BLUE-DEATH.png" id="6_vo2vx"]
@@ -42,6 +45,9 @@ script = ExtResource("1_7k51o")
 refresh_icon = NodePath("UI/refresh_icon")
 recept = NodePath("UI/Recipe-lista")
 death_screen = NodePath("UI/Blue-death")
+cursor_default = ExtResource("2_g50rv")
+cursor_touch = ExtResource("3_du6f5")
+cursor_drag = ExtResource("4_bbney")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

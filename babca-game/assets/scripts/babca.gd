@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var player_sprite : AnimatedSprite2D
 @export var player_sounds : AudioStreamPlayer2D
 @export var ground_ray : RayCast2D
+
 # ---------------------------------------------------------------- #
 
 # PLAYER STATS---------------------------------------------------- #

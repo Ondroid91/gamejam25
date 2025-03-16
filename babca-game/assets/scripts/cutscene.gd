@@ -6,7 +6,7 @@ extends Control
 @export var next_scene: PackedScene
 
 var opening_cut_scene = preload("res://assets/cut_scenes/babcha-cutscene_johi_2.ogv")
-var ending_cut_scene
+var ending_cut_scene = preload("res://assets/cut_scenes/ending.ogv")
 
 func _ready():
 	if cut_scene:

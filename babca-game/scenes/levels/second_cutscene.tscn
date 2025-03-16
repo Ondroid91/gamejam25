@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwxqcyhjh0toh"]
+
+[ext_resource type="Script" uid="uid://cx4n87edxe4d0" path="res://assets/scripts/cutscene.gd" id="1_50uel"]
+[ext_resource type="PackedScene" uid="uid://fi240f51r3xa" path="res://scenes/levels/main_menu.tscn" id="2_dsgkt"]
+
+[node name="cutscene" type="Control" node_paths=PackedStringArray("cut_scene")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_50uel")
+cut_scene = NodePath("VideoStreamPlayer")
+type_of_cutscene = "ending"
+next_scene = ExtResource("2_dsgkt")
+metadata/_custom_type_script = "uid://cx4n87edxe4d0"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+autoplay = true
+expand = true

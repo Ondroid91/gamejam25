@@ -3,6 +3,14 @@ extends CanvasLayer
 @export var refresh_icon : AnimatedSprite2D
 @export var recept : Sprite2D
 @export var death_screen : Sprite2D
+@export var cursor_default : Texture2D
+@export var cursor_touch : Texture2D
+@export var cursor_drag : Texture2D
+
+func _ready() -> void:
+	if cursor_default:
+		Input.set_custom_mouse_cursor(cursor_default)
+
 
 func _process(delta: float) -> void:
 	if not gl.alive:
@@ -17,7 +25,14 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("refresh"):
 		get_tree().paused = false
 		death_screen.visible = false
-		
+	
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if cursor_drag:
+				Input.set_custom_mouse_cursor(cursor_drag)
+		else:
+			if cursor_default:
+				Input.set_custom_mouse_cursor(cursor_default)
 
 func _on_start_pressed() -> void:
 	pass

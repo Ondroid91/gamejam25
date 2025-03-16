@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fi240f51r3xa"]
+[gd_scene load_steps=12 format=3 uid="uid://fi240f51r3xa"]
 
 [ext_resource type="Script" uid="uid://ct12k8r71xo6r" path="res://assets/scripts/main_menu.gd" id="1_fkd6t"]
 [ext_resource type="Texture2D" uid="uid://csy1i3ncale13" path="res://assets/images/menu-psd_test.png" id="2_keln3"]
 [ext_resource type="Texture2D" uid="uid://d0xn73p1i4ud6" path="res://assets/images/menu--napis00000.png" id="3_crctu"]
 [ext_resource type="Texture2D" uid="uid://bvn4knlclafyx" path="res://assets/images/menu--napis00002.png" id="4_sn5u3"]
 [ext_resource type="Texture2D" uid="uid://6k72u4fthop" path="res://assets/images/menu--napis00001.png" id="5_cn35j"]
+[ext_resource type="Texture2D" uid="uid://pwtnvkno7lcp" path="res://assets/images/exit-button.png" id="6_keln3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tbmy8"]
 animations = [{
@@ -23,9 +24,39 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="main_menu" type="CanvasLayer" node_paths=PackedStringArray("ani")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_crctu"]
+atlas = ExtResource("6_keln3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn5u3"]
+atlas = ExtResource("6_keln3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn35j"]
+atlas = ExtResource("6_keln3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wko7x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crctu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn5u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn35j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="main_menu" type="CanvasLayer" node_paths=PackedStringArray("ani", "quit_ani")]
 script = ExtResource("1_fkd6t")
 ani = NodePath("Control/glasses")
+quit_ani = NodePath("Control/quit")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -42,6 +73,11 @@ texture = ExtResource("2_keln3")
 position = Vector2(579, 322)
 scale = Vector2(0.609, 0.609)
 sprite_frames = SubResource("SpriteFrames_tbmy8")
+
+[node name="quit" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(64, 597)
+scale = Vector2(2.02297, 2.02297)
+sprite_frames = SubResource("SpriteFrames_wko7x")
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
@@ -63,9 +99,18 @@ scale = Vector2(47.7555, 48.999)
 focus_mode = 0
 flat = true
 
+[node name="Button3" type="Button" parent="Control"]
+offset_left = 40.0
+offset_top = 573.0
+offset_right = 88.0
+offset_bottom = 621.0
+focus_mode = 0
+flat = true
+
 [connection signal="mouse_entered" from="Control/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Control/Button2" to="." method="_on_button_2_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Button2" to="." method="_on_button_2_mouse_exited"]
 [connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
