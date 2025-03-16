@@ -16,12 +16,13 @@ extends CharacterBody2D
 # ----------------------------------------------------------------- #
 
 func _physics_process(delta: float) -> void:
-	player_movement(delta)
+	if gl.allow_player_move:
+		player_movement(delta)
 	refresh()
+	velocity.y += self.get_gravity().y * delta 
 
 func player_movement(delta: float) -> void:
-	#movement
-	velocity.y += self.get_gravity().y * delta  
+	#movement 
 	var input_direction = Input.get_axis("left", "right")
 	if input_direction != 0:
 		velocity.x = lerp(velocity.x, input_direction * speed, acceleration * delta)

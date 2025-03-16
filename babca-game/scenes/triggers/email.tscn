@@ -1,7 +1,10 @@
-[gd_scene load_steps=85 format=3 uid="uid://h73yqoki0tem"]
+[gd_scene load_steps=86 format=3 uid="uid://h73yqoki0tem"]
 
 [ext_resource type="Script" uid="uid://bkpvtwjrhy7h7" path="res://assets/scripts/email.gd" id="1_lj8r5"]
 [ext_resource type="Texture2D" uid="uid://dmxap8kff0yoj" path="res://assets/images/spritesheet.png" id="2_qxn51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj8r5"]
+size = Vector2(20, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4dus"]
 atlas = ExtResource("2_qxn51")
@@ -578,10 +581,15 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="email" type="Area2D"]
+[node name="email" type="Area2D" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_lj8r5")
+anim = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75, 20)
+shape = SubResource("RectangleShape2D_lj8r5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kf7ty")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

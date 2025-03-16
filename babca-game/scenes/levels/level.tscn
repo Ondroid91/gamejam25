@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://7suyqljufqur"]
+[gd_scene load_steps=21 format=3 uid="uid://7suyqljufqur"]
 
 [ext_resource type="Script" uid="uid://dj4qui0l4lqr7" path="res://assets/scripts/level.gd" id="1_qhnmj"]
 [ext_resource type="PackedScene" uid="uid://bb7ootuiqs82c" path="res://scenes/player/babca.tscn" id="2_jyre1"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c8thys3sjifyk" path="res://scenes/triggers/spawn_object.tscn" id="16_2cqhq"]
 [ext_resource type="PackedScene" uid="uid://boh1qj2yk8yns" path="res://scenes/windows/friend_request.tscn" id="17_rel61"]
 [ext_resource type="PackedScene" uid="uid://ck2xngg13ir2v" path="res://scenes/new_friend.tscn" id="18_38mka"]
+[ext_resource type="PackedScene" uid="uid://h73yqoki0tem" path="res://scenes/triggers/email.tscn" id="20_lp2ca"]
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_qhnmj")
@@ -192,7 +193,7 @@ spawn = true
 position = Vector2(839, -2184.63)
 
 [node name="PDF" parent="triggers" instance=ExtResource("15_3nw6c")]
-position = Vector2(548, -94.628)
+position = Vector2(1258, -4679.63)
 
 [node name="checkpoint3" parent="triggers" instance=ExtResource("14_wuciw")]
 position = Vector2(543, -3218.63)
@@ -290,9 +291,12 @@ trigger = NodePath("../../triggers/trigger_area")
 friend = true
 
 [node name="babca" parent="." instance=ExtResource("2_jyre1")]
-position = Vector2(331, 3.99976)
+position = Vector2(1083, -4530)
 jump_speed = 600
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_lp2ca")]
 position = Vector2(-732, -1)
 target = NodePath("../babca")
+
+[node name="email" parent="." instance=ExtResource("20_lp2ca")]
+position = Vector2(643, -4518)
