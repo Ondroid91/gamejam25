@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://fi240f51r3xa"]
+
+[ext_resource type="Script" uid="uid://ct12k8r71xo6r" path="res://assets/scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://csy1i3ncale13" path="res://assets/images/menu-psd_test.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://d0xn73p1i4ud6" path="res://assets/images/menu--napis00000.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://bvn4knlclafyx" path="res://assets/images/menu--napis00002.png" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://6k72u4fthop" path="res://assets/images/menu--napis00001.png" id="5_8ln24"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbmy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ln24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rtw2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8ln24")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="main_menu" type="CanvasLayer" node_paths=PackedStringArray("ani")]
+script = ExtResource("1_ekxnf")
+ani = NodePath("Control/glasses")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(579, 322)
+scale = Vector2(0.608718, 0.608718)
+texture = ExtResource("1_l6cm7")
+
+[node name="glasses" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(579, 322)
+scale = Vector2(0.609, 0.609)
+sprite_frames = SubResource("SpriteFrames_tbmy8")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 125.0
+offset_right = 102.0
+offset_bottom = 133.0
+scale = Vector2(47.7555, 48.999)
+focus_mode = 0
+flat = true
+
+[node name="Button2" type="Button" parent="Control"]
+offset_left = 691.0
+offset_top = 125.0
+offset_right = 699.0
+offset_bottom = 133.0
+scale = Vector2(47.7555, 48.999)
+focus_mode = 0
+flat = true
+
+[connection signal="mouse_entered" from="Control/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Control/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

@@ -5,6 +5,9 @@
 
 [node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("UI")]
 zoom = Vector2(0.7, 0.7)
+limit_left = -625
+limit_right = 1855
+limit_bottom = 280
 script = ExtResource("1_1revr")
 follow_speed = 10.0
 off_set = Vector2(0, -100)

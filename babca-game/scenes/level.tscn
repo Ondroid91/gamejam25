@@ -92,6 +92,7 @@ spawn = true
 [node name="trigger_area3" parent="triggers" instance=ExtResource("6_b121j")]
 position = Vector2(339, -1324)
 scale = Vector2(55.16, 1)
+kill = true
 
 [node name="checkpoint" parent="triggers" instance=ExtResource("9_8iemx")]
 position = Vector2(950, -1386)
@@ -114,9 +115,3 @@ level = NodePath("../..")
 object_to_spawn = ExtResource("11_t1rx8")
 trigger = NodePath("../../triggers/trigger_area")
 friend = true
-
-[node name="checkpoint" parent="." instance=ExtResource("9_8iemx")]
-position = Vector2(385, 65.6284)
-
-[node name="checkpoint2" parent="." instance=ExtResource("9_8iemx")]
-position = Vector2(824, 63.6284)

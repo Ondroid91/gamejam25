@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://co8e2ckeqctf5"]
+
+[ext_resource type="Script" uid="uid://heuqd1f4qy8e" path="res://assets/scripts/pdf.gd" id="1_uajkt"]
+[ext_resource type="Texture2D" uid="uid://c47a7ukj1pbqe" path="res://assets/images/recipe-victory.png" id="2_n3xpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dpfh"]
+atlas = ExtResource("2_n3xpm")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bekj"]
+atlas = ExtResource("2_n3xpm")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr53s"]
+atlas = ExtResource("2_n3xpm")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vn3h"]
+atlas = ExtResource("2_n3xpm")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_byeam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dpfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bekj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr53s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vn3h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpvw1"]
+radius = 23.1948
+
+[node name="PDF" type="Area2D" node_paths=PackedStringArray("collect_sound", "image")]
+script = ExtResource("1_uajkt")
+collect_sound = NodePath("collect_sound")
+image = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_byeam")
+frame_progress = 0.142332
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xpvw1")
+
+[node name="collect_sound" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
