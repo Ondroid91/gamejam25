@@ -36,11 +36,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("refresh_icon", "death_screen")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("refresh_icon", "recept", "death_screen")]
 process_mode = 3
 script = ExtResource("1_7k51o")
 refresh_icon = NodePath("UI/refresh_icon")
-death_screen = NodePath("Blue-death")
+recept = NodePath("UI/Recipe-lista")
+death_screen = NodePath("UI/Blue-death")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -69,24 +70,36 @@ offset_bottom = 554.0
 focus_mode = 0
 flat = true
 
+[node name="sound" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 527.0
+offset_right = 755.0
+offset_bottom = 561.0
+focus_mode = 0
+text = "snd"
+
 [node name="refresh_icon" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(344, 543)
 sprite_frames = SubResource("SpriteFrames_bbney")
 
+[node name="sound_icon" type="AnimatedSprite2D" parent="UI"]
+
 [node name="Recipe-lista" type="Sprite2D" parent="UI"]
 position = Vector2(374, 543)
 texture = ExtResource("4_lvnoa")
+
+[node name="Blue-death" type="Sprite2D" parent="UI"]
+visible = false
+position = Vector2(584, 330)
+scale = Vector2(0.363072, 0.363072)
+texture = ExtResource("6_vo2vx")
 
 [node name="Foreground-concept" type="Sprite2D" parent="UI"]
 position = Vector2(575.842, 324.287)
 scale = Vector2(0.438728, 0.438728)
 texture = ExtResource("5_tkbb0")
 
-[node name="Blue-death" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(563, 338)
-scale = Vector2(0.509274, 0.509274)
-texture = ExtResource("6_vo2vx")
-
 [connection signal="pressed" from="UI/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="UI/refresh" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="UI/sound" to="." method="_on_start_pressed"]

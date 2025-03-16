@@ -18,8 +18,6 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	refresh()
-	
-
 
 func player_movement(delta: float) -> void:
 	#movement
@@ -62,6 +60,7 @@ func player_movement(delta: float) -> void:
 func refresh() -> void:
 	if Input.is_action_just_pressed("refresh"):
 		sv.load_game()
+		
 		get_tree().reload_current_scene()
 
 func play_animation(anim : String, flip : bool = player_sprite.flip_h) -> void:

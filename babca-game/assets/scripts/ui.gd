@@ -1,13 +1,16 @@
 extends CanvasLayer
 
 @export var refresh_icon : AnimatedSprite2D
+@export var recept : Sprite2D
 @export var death_screen : Sprite2D
-
 
 func _process(delta: float) -> void:
 	if not gl.alive:
 		death()
 		gl.alive = true
+	if sv.have_recept:
+		recept.visible = true
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("refresh"):

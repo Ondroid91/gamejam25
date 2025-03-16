@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 gl="*res://assets/scripts/gl.gd"
 sv="*res://assets/scripts/save_manager.gd"
-ms="*res://scenes/music_manager.tscn"
+ms="*res://scenes/global/music_manager.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

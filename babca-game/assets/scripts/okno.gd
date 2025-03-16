@@ -96,20 +96,25 @@ func _ready():
 		_on_min_button_pressed()
 	update_buttons()
 	origin_pos = position
-
+	
+	update_win_image()
+	
+func update_win_image() -> void:
 	# window image
 	match window_image:
 		0:
 			ani_sprite_window.animation = "default"
 		1:
-			ani_sprite_window.animation = "new_animation_1"
+			ani_sprite_window.animation = "new_animation"
 		2:
-			ani_sprite_window.animation = "new_animation_2"
+			ani_sprite_window.animation = "new_animation_1"
 		3:
-			ani_sprite_window.animation = "new_animation_3"
+			ani_sprite_window.animation = "new_animation_2"
 		4:
-			ani_sprite_window.animation = "new_animation_4"
+			ani_sprite_window.animation = "new_animation_3"
 		5:
+			ani_sprite_window.animation = "new_animation_4"
+		6:
 			ani_sprite_window.animation = "new_animation_5"
 
 func _physics_process(delta: float) -> void:
@@ -171,12 +176,41 @@ func cookies(answer : bool, stage : int) -> void:
 			if answer:
 				get_cookied = true
 			cookies_stage += 1
+			window_image += 1
 			ani_sprite_in_window.frame += 1
 		1:
+			if not answer:
+				get_cookied = true
 			cookies_stage += 1
+			window_image += 1
 			ani_sprite_in_window.frame += 1
 		2:
-			queue_free()
+			if not answer:
+				get_cookied = true
+			cookies_stage += 1
+			window_image += 1
+			ani_sprite_in_window.frame += 1
+		3:
+			if not answer:
+				get_cookied = true
+			cookies_stage += 1
+			window_image += 1
+			ani_sprite_in_window.frame += 1
+		4:
+			if answer:
+				get_cookied = true
+			cookies_stage += 1
+			window_image += 1
+			ani_sprite_in_window.frame += 1
+		5:
+			if answer:
+				get_cookied = true
+			else:
+				queue_free()
+			cookies_stage += 1
+			window_image += 1
+			ani_sprite_in_window.frame += 1
+	update_win_image()
 	if get_cookied:
 		ani_sprite_window.frame = 1
 		await get_tree().create_timer(2.0).timeout
@@ -214,7 +248,7 @@ func _on_yes_button_pressed():
 
 func _on_no_button_pressed():
 	if window_type == "cookies":
-		cookies(true, cookies_stage)
+		cookies(false, cookies_stage)
 	else:
 		answer_friend_request(false)
 

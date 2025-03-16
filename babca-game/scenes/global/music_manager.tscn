@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvn0g3lmk4y3c"]
+
+[ext_resource type="Script" uid="uid://dv4ft6urk73vc" path="res://assets/scripts/music_manager.gd" id="1_m5y1j"]
+[ext_resource type="AudioStream" uid="uid://06d8500743on" path="res://assets/sounds/main_menu.wav" id="2_nojth"]
+[ext_resource type="AudioStream" uid="uid://dbgnrfr4l8y2j" path="res://assets/sounds/main_soundtrack2.wav" id="3_o21w8"]
+
+[node name="music_manager" type="AudioStreamPlayer"]
+script = ExtResource("1_m5y1j")
+menu_oundtrack = ExtResource("2_nojth")
+main_soundtrack = ExtResource("3_o21w8")
