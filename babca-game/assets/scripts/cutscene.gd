@@ -1,6 +1,7 @@
+class_name cutscene
 extends Control
 
-@export var cut_scene : VideoStreamPlayer
+@export var cut_scene : VideoStreamPlayer 
 @export var type_of_cutscene : String
 
 var opening_cut_scene
