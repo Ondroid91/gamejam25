@@ -100,6 +100,7 @@ focus_mode = 0
 flat = true
 
 [node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 573.0
 offset_right = 88.0
