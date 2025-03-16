@@ -8,16 +8,13 @@ extends Node2D
 func _ready() -> void:
 	ms.start_music("game")
 	if player and camera:
-		#spawn_player()
-		pass
+		spawn_player()
 
-func _process(delta: float) -> void:
-	if not gl.alive:
-		death()
-		gl.alive = true
+
 
 func death() -> void:
 	print("you died")
+
 
 func spawn_player() -> void:
 	var babca = player.instantiate()

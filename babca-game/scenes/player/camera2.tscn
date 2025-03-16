@@ -3,15 +3,13 @@
 [ext_resource type="Script" uid="uid://ck3ulrq25lfq8" path="res://assets/scripts/camera2.gd" id="1_1revr"]
 [ext_resource type="PackedScene" uid="uid://b3w0keijcinqo" path="res://scenes/player/ui.tscn" id="2_kwptj"]
 
-[node name="Camera2D" type="Camera2D"]
+[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("UI")]
 zoom = Vector2(0.7, 0.7)
 script = ExtResource("1_1revr")
 follow_speed = 10.0
 off_set = Vector2(0, -100)
+UI = NodePath("UI")
 
 [node name="UI" parent="." instance=ExtResource("2_kwptj")]
-offset_left = -814.0
-offset_top = -444.0
-offset_right = -814.0
-offset_bottom = -444.0
-scale = Vector2(1.3984, 1.3984)
+scale = Vector2(1.03669, 1.03669)
+transform = Transform2D(1.03669, 0, 0, 1.03669, 0, 0)

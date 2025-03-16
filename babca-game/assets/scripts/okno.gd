@@ -58,7 +58,7 @@ var label3 : int = numbers1[0]
 var num_pos1 : int = numbers1[1]
 var num_pos2 : int = numbers1[6]
 var num_pos3 : int = numbers1[7]
-var code : = "245"
+var code : = "298"
 
 #windows
 var max_dis : float = 500
@@ -92,7 +92,7 @@ func _ready():
 	if area_coll:
 		area_coll.body_entered.connect(_on_body_entered)
 
-	if is_minimalized:
+	if not is_minimalized:
 		_on_min_button_pressed()
 	update_buttons()
 	origin_pos = position

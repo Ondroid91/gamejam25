@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3w0keijcinqo"]
+[gd_scene load_steps=11 format=3 uid="uid://b3w0keijcinqo"]
 
 [ext_resource type="Script" uid="uid://bkxp7b12dlhxu" path="res://scenes/player/ui.gd" id="1_7k51o"]
 [ext_resource type="Texture2D" uid="uid://dn136pwfqwfbi" path="res://assets/images/taskbar.png" id="2_tkbb0"]
 [ext_resource type="Texture2D" uid="uid://di6ykhum7wotc" path="res://assets/images/restart.png" id="3_vo2vx"]
 [ext_resource type="Texture2D" uid="uid://bvsf78qr0m53m" path="res://assets/images/recipe-lista.png" id="4_lvnoa"]
 [ext_resource type="Texture2D" uid="uid://ddesn14qnj48o" path="res://assets/images/monitor.png" id="5_tkbb0"]
+[ext_resource type="Texture2D" uid="uid://blrxggkmddkjt" path="res://assets/images/BLUE-DEATH.png" id="6_vo2vx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkbb0"]
 atlas = ExtResource("3_vo2vx")
@@ -35,21 +36,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="UI" type="Control" node_paths=PackedStringArray("refresh_icon")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("refresh_icon", "death_screen")]
+process_mode = 3
 script = ExtResource("1_7k51o")
-refresh_icon = NodePath("refresh_icon")
+refresh_icon = NodePath("UI/refresh_icon")
+death_screen = NodePath("Blue-death")
 
-[node name="Taskbar" type="Sprite2D" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Taskbar" type="Sprite2D" parent="UI"]
 position = Vector2(575, 542)
 texture = ExtResource("2_tkbb0")
 
-[node name="start" type="Button" parent="."]
+[node name="start" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 273.0
 offset_top = 527.0
@@ -57,7 +60,7 @@ offset_right = 307.0
 offset_bottom = 561.0
 focus_mode = 0
 
-[node name="refresh" type="Button" parent="."]
+[node name="refresh" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 333.0
 offset_top = 532.0
@@ -66,19 +69,24 @@ offset_bottom = 554.0
 focus_mode = 0
 flat = true
 
-[node name="refresh_icon" type="AnimatedSprite2D" parent="."]
+[node name="refresh_icon" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(344, 543)
 sprite_frames = SubResource("SpriteFrames_bbney")
 
-[node name="Recipe-lista" type="Sprite2D" parent="."]
+[node name="Recipe-lista" type="Sprite2D" parent="UI"]
 position = Vector2(374, 543)
 texture = ExtResource("4_lvnoa")
 
-[node name="Foreground-concept" type="Sprite2D" parent="."]
+[node name="Foreground-concept" type="Sprite2D" parent="UI"]
 position = Vector2(575.842, 324.287)
 scale = Vector2(0.438728, 0.438728)
 texture = ExtResource("5_tkbb0")
 
-[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
-[connection signal="mouse_entered" from="refresh" to="." method="_on_refresh_mouse_entered"]
-[connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
+[node name="Blue-death" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(563, 338)
+scale = Vector2(0.509274, 0.509274)
+texture = ExtResource("6_vo2vx")
+
+[connection signal="pressed" from="UI/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/refresh" to="." method="_on_refresh_pressed"]
