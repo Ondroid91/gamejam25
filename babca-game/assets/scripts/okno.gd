@@ -7,7 +7,6 @@ extends Node2D
 @export var ani_sprite_cancel_button : AnimatedSprite2D
 @export var ani_sprite_min_button : AnimatedSprite2D
 @export var ani_sprite_move_button : AnimatedSprite2D
-@export var animation_player : AnimationPlayer
 @export var sound_player : AudioStreamPlayer2D
 @export var static_coll : StaticBody2D
 @export var area_coll : Area2D
@@ -93,13 +92,25 @@ func _ready():
 	if area_coll:
 		area_coll.body_entered.connect(_on_body_entered)
 
-	if not is_minimalized:
+	if is_minimalized:
 		_on_min_button_pressed()
 	update_buttons()
 	origin_pos = position
 
 	# window image
-	
+	match window_image:
+		0:
+			ani_sprite_window.animation = "default"
+		1:
+			ani_sprite_window.animation = "new_animation_1"
+		2:
+			ani_sprite_window.animation = "new_animation_2"
+		3:
+			ani_sprite_window.animation = "new_animation_3"
+		4:
+			ani_sprite_window.animation = "new_animation_4"
+		5:
+			ani_sprite_window.animation = "new_animation_5"
 
 func _physics_process(delta: float) -> void:
 	if window_moving:
