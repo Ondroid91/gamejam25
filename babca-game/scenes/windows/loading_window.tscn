@@ -267,9 +267,10 @@ sprite_frames = SubResource("SpriteFrames_jc8ys")
 
 [node name="cancel" type="Button" parent="."]
 offset_left = 28.0
-offset_top = -20.0
+offset_top = -21.0
 offset_right = 46.0
-offset_bottom = -4.0
+offset_bottom = -5.0
+scale = Vector2(1.22124, 1.22124)
 focus_mode = 0
 flat = true
 
@@ -292,10 +293,11 @@ sprite_frames = SubResource("SpriteFrames_v6h0x")
 animation = &"maximaze"
 
 [node name="min" type="Button" parent="."]
-offset_left = 8.0
-offset_top = -20.0
-offset_right = 26.0
-offset_bottom = -4.0
+offset_left = 4.0
+offset_top = -22.0
+offset_right = 22.0
+offset_bottom = -6.0
+scale = Vector2(1.25218, 1.25218)
 focus_mode = 0
 flat = true
 

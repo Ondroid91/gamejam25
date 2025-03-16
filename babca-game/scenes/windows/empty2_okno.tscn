@@ -244,10 +244,10 @@ position = Vector2(161, -112)
 sprite_frames = SubResource("SpriteFrames_qesmc")
 
 [node name="cancel" type="Button" parent="."]
-offset_left = 152.0
-offset_top = -120.0
-offset_right = 170.0
-offset_bottom = -104.0
+offset_left = 150.0
+offset_top = -123.0
+offset_right = 173.0
+offset_bottom = -100.0
 focus_mode = 0
 flat = true
 
@@ -269,10 +269,10 @@ sprite_frames = SubResource("SpriteFrames_0cdl5")
 animation = &"maximaze"
 
 [node name="min" type="Button" parent="."]
-offset_left = 128.0
-offset_top = -120.0
-offset_right = 146.0
-offset_bottom = -104.0
+offset_left = 119.0
+offset_top = -123.0
+offset_right = 149.0
+offset_bottom = -98.0
 focus_mode = 0
 flat = true
 

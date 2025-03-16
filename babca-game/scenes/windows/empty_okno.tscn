@@ -244,10 +244,11 @@ position = Vector2(75, -113)
 sprite_frames = SubResource("SpriteFrames_b4qrf")
 
 [node name="cancel" type="Button" parent="."]
-offset_left = 66.0
-offset_top = -121.0
-offset_right = 84.0
-offset_bottom = -105.0
+offset_left = 65.0
+offset_top = -122.0
+offset_right = 83.0
+offset_bottom = -106.0
+scale = Vector2(1.18365, 1.18365)
 focus_mode = 0
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -271,10 +272,11 @@ sprite_frames = SubResource("SpriteFrames_jsnw1")
 animation = &"maximaze"
 
 [node name="min" type="Button" parent="."]
-offset_left = 42.0
-offset_top = -121.0
-offset_right = 60.0
-offset_bottom = -105.0
+offset_left = 40.0
+offset_top = -122.0
+offset_right = 58.0
+offset_bottom = -106.0
+scale = Vector2(1.19389, 1.19389)
 focus_mode = 0
 flat = true
 metadata/_edit_use_anchors_ = true
