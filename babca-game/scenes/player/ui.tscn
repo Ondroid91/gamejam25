@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dn136pwfqwfbi" path="res://assets/images/taskbar.png" id="2_tkbb0"]
 [ext_resource type="Texture2D" uid="uid://di6ykhum7wotc" path="res://assets/images/restart.png" id="3_vo2vx"]
 [ext_resource type="Texture2D" uid="uid://bvsf78qr0m53m" path="res://assets/images/recipe-lista.png" id="4_lvnoa"]
-[ext_resource type="Texture2D" uid="uid://c2y6h2supaxav" path="res://assets/images/foreground-concept.png" id="5_tkbb0"]
+[ext_resource type="Texture2D" uid="uid://ddesn14qnj48o" path="res://assets/images/monitor.png" id="5_tkbb0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkbb0"]
 atlas = ExtResource("3_vo2vx")
@@ -46,37 +46,37 @@ script = ExtResource("1_7k51o")
 refresh_icon = NodePath("refresh_icon")
 
 [node name="Taskbar" type="Sprite2D" parent="."]
-position = Vector2(575, 535)
+position = Vector2(575, 542)
 texture = ExtResource("2_tkbb0")
 
 [node name="start" type="Button" parent="."]
 layout_mode = 0
 offset_left = 273.0
-offset_top = 520.0
+offset_top = 527.0
 offset_right = 307.0
-offset_bottom = 554.0
+offset_bottom = 561.0
 focus_mode = 0
 
 [node name="refresh" type="Button" parent="."]
 layout_mode = 0
 offset_left = 333.0
-offset_top = 525.0
+offset_top = 532.0
 offset_right = 355.0
-offset_bottom = 547.0
+offset_bottom = 554.0
 focus_mode = 0
 flat = true
 
 [node name="refresh_icon" type="AnimatedSprite2D" parent="."]
-position = Vector2(344, 536)
+position = Vector2(344, 543)
 sprite_frames = SubResource("SpriteFrames_bbney")
 
 [node name="Recipe-lista" type="Sprite2D" parent="."]
-position = Vector2(374, 536)
+position = Vector2(374, 543)
 texture = ExtResource("4_lvnoa")
 
 [node name="Foreground-concept" type="Sprite2D" parent="."]
-position = Vector2(581, 291)
-scale = Vector2(0.485569, 0.485569)
+position = Vector2(575.842, 324.287)
+scale = Vector2(0.438728, 0.438728)
 texture = ExtResource("5_tkbb0")
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]

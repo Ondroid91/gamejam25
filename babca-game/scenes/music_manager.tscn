@@ -1,15 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbchn7bm1dxjo"]
+[gd_scene load_steps=4 format=3 uid="uid://dvn0g3lmk4y3c"]
 
 [ext_resource type="Script" uid="uid://dv4ft6urk73vc" path="res://assets/scripts/music_manager.gd" id="1_hetdf"]
-[ext_resource type="AudioStream" uid="uid://bw6ceb01qco3d" path="res://assets/sounds/main_sountrack.mp3" id="2_jd6i5"]
 [ext_resource type="AudioStream" uid="uid://06d8500743on" path="res://assets/sounds/main_menu.wav" id="2_yodp2"]
 [ext_resource type="AudioStream" uid="uid://dbgnrfr4l8y2j" path="res://assets/sounds/main_soundtrack2.wav" id="3_xcw26"]
 
-[node name="music_manager" type="Node2D" node_paths=PackedStringArray("music_player")]
+[node name="music_manager" type="AudioStreamPlayer"]
 script = ExtResource("1_hetdf")
-music_player = NodePath("AudioStreamPlayer2D")
 menu_oundtrack = ExtResource("2_yodp2")
 main_soundtrack = ExtResource("3_xcw26")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_jd6i5")
