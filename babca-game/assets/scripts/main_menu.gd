@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @export var ani : AnimatedSprite2D
-var scene_to_load = "uid://7suyqljufqur"
+var scene_to_load = "uid://cea4qftgpxyvm"
 
 func _ready() -> void:
 	ms.start_music("menu")

@@ -1,19 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://cea4qftgpxyvm"]
 
 [ext_resource type="Script" uid="uid://cx4n87edxe4d0" path="res://assets/scripts/cutscene.gd" id="1_c57ag"]
-[ext_resource type="VideoStream" path="res://assets/cut_scenes/babcha-cutscene_johi_2.ogv" id="2_sr41w"]
+[ext_resource type="PackedScene" uid="uid://beg8haby7g0af" path="res://scenes/levels/level2.tscn" id="2_c57ag"]
 
-[node name="cutscene" type="Control"]
+[node name="cutscene" type="Control" node_paths=PackedStringArray("cut_scene")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_c57ag")
+cut_scene = NodePath("VideoStreamPlayer")
+type_of_cutscene = "opening"
+next_scene = ExtResource("2_c57ag")
 metadata/_custom_type_script = "uid://cx4n87edxe4d0"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
-stream = ExtResource("2_sr41w")
 autoplay = true
 expand = true
