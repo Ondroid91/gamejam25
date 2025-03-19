@@ -58,7 +58,7 @@ var label3 : int = numbers1[0]
 var num_pos1 : int = numbers1[1]
 var num_pos2 : int = numbers1[6]
 var num_pos3 : int = numbers1[7]
-var code : = "298"
+var code : = "295"
 
 #windows
 @export var max_dis : float = 500
@@ -91,13 +91,18 @@ func _ready():
 	
 	if area_coll:
 		area_coll.body_entered.connect(_on_body_entered)
-
-
-	_on_min_button_pressed()
+	
+	update_win_image()
+	if not area_coll and not yes_button and  not no_button:
+		ani_sprite_window.frame = 1
+	if not is_minimalized and not virus:
+		_on_min_button_pressed()
+	else:
+		_on_min_button_pressed()
+	
 	update_buttons()
 	origin_pos = position
 	
-	update_win_image()
 	
 func update_win_image() -> void:
 	# window image
@@ -115,6 +120,8 @@ func update_win_image() -> void:
 		5:
 			ani_sprite_window.animation = "new_animation_4"
 		6:
+			ani_sprite_window.animation = "new_animation_5"
+		7:
 			ani_sprite_window.animation = "new_animation_5"
 
 func _physics_process(delta: float) -> void:
@@ -177,39 +184,40 @@ func cookies(answer : bool, stage : int) -> void:
 				get_cookied = true
 			cookies_stage += 1
 			window_image += 1
-			ani_sprite_in_window.frame += 1
 		1:
 			if not answer:
 				get_cookied = true
 			cookies_stage += 1
 			window_image += 1
-			ani_sprite_in_window.frame += 1
 		2:
-			if not answer:
-				get_cookied = true
-			cookies_stage += 1
-			window_image += 1
-			ani_sprite_in_window.frame += 1
-		3:
-			if not answer:
-				get_cookied = true
-			cookies_stage += 1
-			window_image += 1
-			ani_sprite_in_window.frame += 1
-		4:
 			if answer:
 				get_cookied = true
 			cookies_stage += 1
 			window_image += 1
-			ani_sprite_in_window.frame += 1
+			yes_button.text = "JA"
+			no_button.text = "NEIN"
+		3:
+			if answer:
+				get_cookied = true
+			cookies_stage += 1
+			window_image += 1
+			yes_button.text = "SEY"
+			no_button.text = "ON"
+		4:
+			if answer: #nemecky
+				get_cookied = true
+			cookies_stage += 1
+			window_image += 1
+			yes_button.text = "YES"
+			no_button.text = "NO"
 		5:
 			if answer:
 				get_cookied = true
 			else:
 				queue_free()
+
 			cookies_stage += 1
 			window_image += 1
-			ani_sprite_in_window.frame += 1
 	update_win_image()
 	if get_cookied:
 		ani_sprite_window.frame = 1
@@ -271,7 +279,7 @@ func _on_min_button_pressed():
 			if virus:
 				min_enabled = false
 				update_buttons()
-				await get_tree().create_timer(2.0).timeout
+				await get_tree().create_timer(1.0).timeout
 				gl.alive = false
 		update_buttons()
 

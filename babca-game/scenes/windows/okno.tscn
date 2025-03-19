@@ -161,7 +161,7 @@ size = Vector2(299, 37)
 [node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
 script = ExtResource("1_00nhu")
 ani_sprite_window = NodePath("window")
-ani_sprite_in_window = NodePath("in_window")
+ani_sprite_in_window = NodePath("")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
 ani_sprite_move_button = NodePath("move_button")
@@ -176,8 +176,6 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_njhms")
 frame = 1
-
-[node name="in_window" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(136, -88)

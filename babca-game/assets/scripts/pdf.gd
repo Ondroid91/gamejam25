@@ -12,8 +12,10 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "babca":
-		sv.have_recept = true
 		collect_sound.play()
 		image.visible = false
+		sv.have_recept = true
 		await get_tree().create_timer(2.0).timeout
+		image.visible = false
+		sv.have_recept = true
 		queue_free()

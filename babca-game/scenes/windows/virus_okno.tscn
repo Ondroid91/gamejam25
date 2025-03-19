@@ -177,7 +177,6 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2brps")
-frame = 1
 
 [node name="in_window" type="AnimatedSprite2D" parent="."]
 

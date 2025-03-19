@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bvvtdbwl8g1fq"]
+[gd_scene load_steps=58 format=3 uid="uid://bvvtdbwl8g1fq"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_ndj0f"]
 [ext_resource type="Texture2D" uid="uid://dxwbavsok0jj8" path="res://assets/images/cookie-window.png" id="2_30d2l"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dr0imkkdw77s0" path="res://assets/images/cross.png" id="3_etu1m"]
 [ext_resource type="Texture2D" uid="uid://b73we2no1hg2q" path="res://assets/images/up-down.png" id="4_5bldh"]
 [ext_resource type="Texture2D" uid="uid://r7keyirw11i8" path="res://assets/images/cookie-windows-questions00002.png" id="4_j0mvc"]
+[ext_resource type="Texture2D" uid="uid://bi74x612wngmk" path="res://assets/images/cookie-windows-questions00001.png" id="5_7aol5"]
 [ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="5_h1xx4"]
 [ext_resource type="Texture2D" uid="uid://cfj7psmxgmcw7" path="res://assets/images/cookie-windows-questions00003.png" id="5_t324t"]
 [ext_resource type="Texture2D" uid="uid://cbo7fbuf0guca" path="res://assets/images/cookie-windows-questions00004.png" id="6_7aol5"]
@@ -30,20 +31,20 @@ region = Rect2(0, 0, 180, 250)
 atlas = ExtResource("3_5bldh")
 region = Rect2(180, 0, 180, 250)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekjvm"]
+atlas = ExtResource("5_7aol5")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l75dy"]
+atlas = ExtResource("5_7aol5")
+region = Rect2(180, 0, 180, 250)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6qyq"]
 atlas = ExtResource("4_j0mvc")
 region = Rect2(0, 0, 180, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rvbm"]
 atlas = ExtResource("4_j0mvc")
-region = Rect2(180, 0, 180, 250)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6wlj"]
-atlas = ExtResource("5_t324t")
-region = Rect2(0, 0, 180, 250)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7djeg"]
-atlas = ExtResource("5_t324t")
 region = Rect2(180, 0, 180, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_coky0"]
@@ -68,6 +69,14 @@ region = Rect2(0, 0, 180, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcdrd"]
 atlas = ExtResource("8_ekjvm")
+region = Rect2(180, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6wlj"]
+atlas = ExtResource("5_t324t")
+region = Rect2(0, 0, 180, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7djeg"]
+atlas = ExtResource("5_t324t")
 region = Rect2(180, 0, 180, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnip7"]
@@ -96,10 +105,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m6qyq")
+"texture": SubResource("AtlasTexture_ekjvm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4rvbm")
+"texture": SubResource("AtlasTexture_l75dy")
 }],
 "loop": true,
 "name": &"new_animation_1",
@@ -107,10 +116,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v6wlj")
+"texture": SubResource("AtlasTexture_m6qyq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7djeg")
+"texture": SubResource("AtlasTexture_4rvbm")
 }],
 "loop": true,
 "name": &"new_animation_2",
@@ -147,6 +156,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6wlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7djeg")
+}],
+"loop": true,
+"name": &"new_animation_6",
 "speed": 5.0
 }]
 
@@ -339,9 +359,10 @@ animations = [{
 }]
 
 [node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button", "yes_button", "no_button")]
+scale = Vector2(2.2, 2.2)
 script = ExtResource("1_ndj0f")
 ani_sprite_window = NodePath("window")
-ani_sprite_in_window = NodePath("in_window")
+ani_sprite_in_window = NodePath("")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
 ani_sprite_move_button = NodePath("move_button")
@@ -363,8 +384,6 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 [node name="window" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_nnip7")
-
-[node name="in_window" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(75, -112)
@@ -432,7 +451,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_etu1m")
 theme_override_font_sizes/font_size = 12
-text = "ACCEPT"
+text = "YES"
 flat = true
 
 [node name="no" type="Button" parent="."]
@@ -444,5 +463,5 @@ focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_etu1m")
 theme_override_font_sizes/font_size = 12
-text = "DENIED"
+text = "NO"
 flat = true

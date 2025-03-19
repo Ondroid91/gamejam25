@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3w0keijcinqo"]
+[gd_scene load_steps=20 format=3 uid="uid://b3w0keijcinqo"]
 
 [ext_resource type="Script" uid="uid://bkxp7b12dlhxu" path="res://assets/scripts/ui.gd" id="1_7k51o"]
 [ext_resource type="Texture2D" uid="uid://d00li7gdsmsut" path="res://assets/images/KURZORY00000.png" id="2_g50rv"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bvsf78qr0m53m" path="res://assets/images/recipe-lista.png" id="4_lvnoa"]
 [ext_resource type="Texture2D" uid="uid://ddesn14qnj48o" path="res://assets/images/monitor.png" id="5_tkbb0"]
 [ext_resource type="Texture2D" uid="uid://blrxggkmddkjt" path="res://assets/images/BLUE-DEATH.png" id="6_vo2vx"]
+[ext_resource type="FontFile" uid="uid://rwp5pnfk880b" path="res://assets/fonts/MedodicaRegular.otf" id="9_du6f5"]
+[ext_resource type="Texture2D" uid="uid://pwtnvkno7lcp" path="res://assets/images/exit-button.png" id="11_bbney"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkbb0"]
 atlas = ExtResource("3_vo2vx")
@@ -39,12 +41,42 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("refresh_icon", "recept", "death_screen")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_crctu"]
+atlas = ExtResource("11_bbney")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn5u3"]
+atlas = ExtResource("11_bbney")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn35j"]
+atlas = ExtResource("11_bbney")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy13m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crctu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn5u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn35j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("refresh_icon", "recept", "death_screen", "quit_ani")]
 process_mode = 3
 script = ExtResource("1_7k51o")
 refresh_icon = NodePath("UI/refresh_icon")
 recept = NodePath("UI/Recipe-lista")
 death_screen = NodePath("UI/Blue-death")
+quit_ani = NodePath("UI/quit")
 cursor_default = ExtResource("2_g50rv")
 cursor_touch = ExtResource("3_du6f5")
 cursor_drag = ExtResource("4_bbney")
@@ -59,41 +91,35 @@ offset_bottom = 40.0
 position = Vector2(575, 542)
 texture = ExtResource("2_tkbb0")
 
-[node name="start" type="Button" parent="UI"]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 527.0
-offset_right = 307.0
-offset_bottom = 561.0
-focus_mode = 0
-
 [node name="refresh" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 333.0
-offset_top = 532.0
-offset_right = 355.0
-offset_bottom = 554.0
+offset_left = 297.0
+offset_top = 531.0
+offset_right = 319.0
+offset_bottom = 553.0
 focus_mode = 0
 flat = true
 
 [node name="sound" type="Button" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = 719.0
 offset_top = 527.0
 offset_right = 755.0
 offset_bottom = 561.0
 focus_mode = 0
+disabled = true
 text = "snd"
 
 [node name="refresh_icon" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(344, 543)
+position = Vector2(308, 543)
 sprite_frames = SubResource("SpriteFrames_bbney")
 
 [node name="sound_icon" type="AnimatedSprite2D" parent="UI"]
 
 [node name="Recipe-lista" type="Sprite2D" parent="UI"]
 visible = false
-position = Vector2(374, 543)
+position = Vector2(342, 543)
 texture = ExtResource("4_lvnoa")
 
 [node name="Blue-death" type="Sprite2D" parent="UI"]
@@ -102,11 +128,35 @@ position = Vector2(584, 330)
 scale = Vector2(0.363072, 0.363072)
 texture = ExtResource("6_vo2vx")
 
+[node name="Label" type="Label" parent="UI/Blue-death"]
+offset_left = -192.799
+offset_top = 347.039
+offset_right = 539.201
+offset_bottom = 447.039
+theme_override_fonts/font = ExtResource("9_du6f5")
+theme_override_font_sizes/font_size = 100
+text = "PRESS R TO RESTART"
+
 [node name="Foreground-concept" type="Sprite2D" parent="UI"]
 position = Vector2(575.842, 324.287)
 scale = Vector2(0.438728, 0.438728)
 texture = ExtResource("5_tkbb0")
 
-[connection signal="pressed" from="UI/start" to="." method="_on_start_pressed"]
+[node name="quit" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(870, 543)
+scale = Vector2(1.00361, 1.00361)
+sprite_frames = SubResource("SpriteFrames_uy13m")
+
+[node name="Button3" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 531.0
+offset_right = 898.0
+offset_bottom = 573.0
+scale = Vector2(0.598321, 0.569662)
+focus_mode = 0
+flat = true
+
 [connection signal="pressed" from="UI/refresh" to="." method="_on_refresh_pressed"]
 [connection signal="pressed" from="UI/sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="UI/Button3" to="." method="_on_button_3_pressed"]

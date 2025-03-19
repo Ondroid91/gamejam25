@@ -3,23 +3,23 @@ extends CanvasLayer
 @export var refresh_icon : AnimatedSprite2D
 @export var recept : Sprite2D
 @export var death_screen : Sprite2D
+@export var quit_ani : AnimatedSprite2D
+
 @export var cursor_default : Texture2D
 @export var cursor_touch : Texture2D
 @export var cursor_drag : Texture2D
 
+
 func _ready() -> void:
 	if cursor_default:
 		Input.set_custom_mouse_cursor(cursor_default)
-
 
 func _process(delta: float) -> void:
 	if not gl.alive:
 		death()
 		gl.alive = true
 	if sv.have_recept:
-		print("sdkjdfls")
 		recept.visible = true
-
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("refresh"):
@@ -34,13 +34,15 @@ func _input(event: InputEvent) -> void:
 			if cursor_default:
 				Input.set_custom_mouse_cursor(cursor_default)
 
-func _on_start_pressed() -> void:
-	pass
-
 func death() -> void:
 	ms.start_music("death")
 	death_screen.visible = true
 	get_tree().paused = true
+
+func quit() -> void:
+	quit_ani.frame = 2
+	await get_tree().create_timer(0.5)
+	get_tree().quit()
 
 func _on_refresh_pressed() -> void:
 	sv.load_game()
@@ -58,3 +60,6 @@ func _on_sound_pressed() -> void:
 		AudioServer.set_bus_mute(0, false)
 	else:
 		AudioServer.set_bus_mute(0, true)
+
+func _on_button_3_pressed() -> void:
+	quit()

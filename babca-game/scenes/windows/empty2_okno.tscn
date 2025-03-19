@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://by61li2dufxql"]
+[gd_scene load_steps=39 format=3 uid="uid://by61li2dufxql"]
 
 [ext_resource type="Script" uid="uid://bvvtx3l3lofb1" path="res://assets/scripts/okno.gd" id="1_go0go"]
 [ext_resource type="Texture2D" uid="uid://bptv84uojetwf" path="res://assets/images/window3.png" id="2_rjuye"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bytotb3ho4t7k" path="res://assets/images/window18.png" id="4_r7i3o"]
 [ext_resource type="Texture2D" uid="uid://dy642xfbs3l4d" path="res://assets/images/open-close.png" id="5_r7i3o"]
 [ext_resource type="Texture2D" uid="uid://cbnp18tme68c1" path="res://assets/images/window-cislo-9.png" id="5_ypvbd"]
+[ext_resource type="Texture2D" uid="uid://b14p41b6kumiu" path="res://assets/images/win23.png" id="6_r7i3o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypvbd"]
 atlas = ExtResource("2_rjuye")
@@ -39,6 +40,14 @@ region = Rect2(350, 0, 350, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cdl5"]
 atlas = ExtResource("5_ypvbd")
+region = Rect2(0, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrsol"]
+atlas = ExtResource("6_r7i3o")
+region = Rect2(350, 0, 350, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbj2h"]
+atlas = ExtResource("6_r7i3o")
 region = Rect2(0, 0, 350, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gl1c8"]
@@ -85,6 +94,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrsol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbj2h")
+}],
+"loop": true,
+"name": &"new_animation_3",
 "speed": 5.0
 }]
 
@@ -221,7 +241,7 @@ size = Vector2(350, 39)
 [node name="okno" type="Node2D" node_paths=PackedStringArray("ani_sprite_window", "ani_sprite_in_window", "ani_sprite_cancel_button", "ani_sprite_min_button", "ani_sprite_move_button", "static_coll", "max_coll", "min_coll", "cancel_button", "min_button", "move_button")]
 script = ExtResource("1_go0go")
 ani_sprite_window = NodePath("window")
-ani_sprite_in_window = NodePath("in_window")
+ani_sprite_in_window = NodePath("")
 ani_sprite_cancel_button = NodePath("cancel_button")
 ani_sprite_min_button = NodePath("min_button")
 ani_sprite_move_button = NodePath("move_button")
@@ -236,9 +256,6 @@ metadata/_custom_type_script = "uid://bvvtx3l3lofb1"
 
 [node name="window" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gl1c8")
-animation = &"new_animation_2"
-
-[node name="in_window" type="AnimatedSprite2D" parent="."]
 
 [node name="cancel_button" type="AnimatedSprite2D" parent="."]
 position = Vector2(161, -112)
@@ -283,8 +300,8 @@ flat = true
 visible = false
 position = Vector2(0, -105.5)
 shape = SubResource("RectangleShape2D_rrsol")
-disabled = true
 
 [node name="max_coll" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(-175, -125, 175, -125, 175, 125, -175, 125)
+disabled = true

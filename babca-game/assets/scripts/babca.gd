@@ -16,6 +16,9 @@ extends CharacterBody2D
 @export var friction: float = 5.0
 # ----------------------------------------------------------------- #
 
+
+
+
 func _physics_process(delta: float) -> void:
 	if gl.allow_player_move:
 		player_movement(delta)
@@ -33,7 +36,6 @@ func player_movement(delta: float) -> void:
 		velocity.y -= jump_speed
 	if velocity.y < -jump_speed:
 		velocity.y = 1000
-	
 	
 	move_and_slide()
 	# animations

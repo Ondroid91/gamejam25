@@ -9,7 +9,6 @@ func load_game():
 		if not FileAccess.file_exists(save_file_path):
 				print("No save file found.")
 				return
-
 		var file = FileAccess.open(save_file_path, FileAccess.READ)
 		if not file:
 				print("Error opening save file.")

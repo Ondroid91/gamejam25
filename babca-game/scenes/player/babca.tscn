@@ -94,5 +94,6 @@ target_position = Vector2(0, 57.5)
 [node name="player_animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_21mo8")
 animation = &"walk"
+flip_h = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -9,6 +9,7 @@ var opening_cut_scene = preload("res://assets/cut_scenes/babcha-cutscene_johi_2.
 var ending_cut_scene = preload("res://assets/cut_scenes/ending.ogv")
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	if cut_scene:
 		match type_of_cutscene:
 			"opening":
@@ -20,5 +21,6 @@ func _ready():
 		cut_scene.finished.connect(_on_video_finished)
 
 func _on_video_finished() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if next_scene:
 		get_tree().change_scene_to_packed(next_scene)

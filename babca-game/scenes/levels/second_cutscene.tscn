@@ -15,6 +15,7 @@ next_scene = ExtResource("2_dsgkt")
 metadata/_custom_type_script = "uid://cx4n87edxe4d0"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 autoplay = true
